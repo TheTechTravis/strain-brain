@@ -12,6 +12,7 @@ import { Register } from "./auth/Register"
 // import Nav from "react-bootstrap/Nav"
 import { StrainProvider } from "./strain/StrainProvider"
 import { StrainBrainNavbar } from "./navbar/StrainBrainNavbar"
+import { ApplicationViews } from "./ApplicationViews"
 
 export const StrainBrain = () => (
     <>
@@ -21,7 +22,8 @@ export const StrainBrain = () => (
                 return (
                     <>
                         {/* Components that are rendered when the user is authenticated go inside this React fragment */}
-                        <StrainBrainNavbar />
+                        <Route render={props => <StrainBrainNavbar {...props} />} />
+                        <Route render={props => <ApplicationViews {...props} />} />
                     </>
                 )
             } else {
