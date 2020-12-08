@@ -8,6 +8,9 @@ import "../components/StrainBrain.css"
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
+import Navbar from "react-bootstrap/Navbar"
+import Nav from "react-bootstrap/Nav"
+import { StrainProvider } from "./strain/StrainProvider"
 
 export const StrainBrain = () => (
     <>
@@ -20,6 +23,19 @@ export const StrainBrain = () => (
                 return (
                     <>
                         {/* Components that are rendered when the user is authenticated go inside this React fragment */}
+
+                        {/* NAVBAR */}
+                        <Navbar bg="light" expand="lg">
+                            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                            <Nav className="mr-auto">
+                                <Nav.Link href="#home">Home</Nav.Link>
+                                <Nav.Link href="#link">Conditions</Nav.Link>
+                                <Nav.Link href="#link">Puff</Nav.Link>
+                                <Nav.Link href="#link">Pass</Nav.Link>
+                            </Nav>
+                        </Navbar>
+
+                        <StrainProvider />
                     </>
                 )
             } else {
