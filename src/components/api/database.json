@@ -1,0 +1,19 @@
+{
+    "users": [
+        {
+            "email": "travis@outlook.com",
+            "password": "test",
+            "name": "Travis Stevenson",
+            "id": 1
+        }
+    ],
+    "userConditions": [
+        {}
+    ],
+    "conditions": [
+        {}
+    ],
+    "strains": [
+        {}
+    ]
+}
