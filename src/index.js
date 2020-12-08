@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { StrainBrain } from './components/StrainBrain';
+import { BrowserRouter as Router } from "react-router-dom"
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <StrainBrain />
+    <Router>
+      <StrainBrain />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
