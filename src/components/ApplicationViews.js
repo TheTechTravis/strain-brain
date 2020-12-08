@@ -6,12 +6,10 @@ import { StrainProvider } from "./strain/StrainProvider"
 export const ApplicationViews = (props) => {
     return (
         <>
-            { /* Render all strains by default when at root of project */}
+            {/* Render filtered list of strains on home view */}
             <StrainProvider>
                 <Route exact path="/">
-
-                    {/* Render filtered list of strains on home view */}
-
+                    <div>Test</div>
                 </Route>
             </StrainProvider>
         </>
