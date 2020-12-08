@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav"
 export const StrainBrainNavbar = (props) => {
     return (
         <>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light">
                 <Navbar.Brand href="#home">Strain Brain</Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link href="#home">Home</Nav.Link>
