@@ -34,7 +34,7 @@ export const ConditionForm = () => (
                 <Form.Check type="checkbox" label="Spasticity" />
                 <Form.Check type="checkbox" label="Seizures" />
                 <Form.Check type="checkbox" label="Muscle Spasms" />
-                <Button variant="primary">Save Conditions</Button>{' '}
+                <Button variant="primary" onClick={() => console.log("You clicked Save Conditions")}>Save Conditions</Button>{' '}
             </Form>
         </div>
     </>
