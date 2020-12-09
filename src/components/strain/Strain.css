@@ -1,0 +1,14 @@
+/* Flex strains div so each card aligns nicely */
+
+.strains {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Give each card a border and margin to make a clear distinction between cards */
+
+.strain {
+    border: 1px solid black;
+    margin-bottom: 2rem;
+}
