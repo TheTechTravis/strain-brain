@@ -8,7 +8,7 @@ export const StrainBrainNavbar = (props) => {
                 <Nav className="mr-auto">
                     <Nav.Link href="#home">LOGO HERE</Nav.Link>
                 </Nav>
-                <Navbar.Brand className="mx-auto" href="/home">Strain Brain</Navbar.Brand>
+                <Navbar.Brand className="mx-auto" href="/">Strain Brain</Navbar.Brand>
 
                 <Nav className="ml-auto">
                     <Nav.Link href="/conditions">Conditions</Nav.Link>
@@ -17,8 +17,6 @@ export const StrainBrainNavbar = (props) => {
 
                 </Nav>
             </Navbar>
-            <h2>Strain Brain!</h2>
-            <small>Your personal guide to medical marijuana.</small>
         </>
     )
 }
