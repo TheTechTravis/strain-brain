@@ -8,12 +8,12 @@ export const StrainBrainNavbar = (props) => {
                 <Nav className="mr-auto">
                     <Nav.Link href="#home">LOGO HERE</Nav.Link>
                 </Nav>
-                <Navbar.Brand className="mx-auto" href="#home">Strain Brain</Navbar.Brand>
+                <Navbar.Brand className="mx-auto" href="/home">Strain Brain</Navbar.Brand>
 
                 <Nav className="ml-auto">
-                    <Nav.Link href="#link">Conditions</Nav.Link>
-                    <Nav.Link href="#link">Puff</Nav.Link>
-                    <Nav.Link href="#link">Pass</Nav.Link>
+                    <Nav.Link href="/conditions">Conditions</Nav.Link>
+                    <Nav.Link href="/puff">Puff</Nav.Link>
+                    <Nav.Link href="/pass">Pass</Nav.Link>
 
                 </Nav>
             </Navbar>
