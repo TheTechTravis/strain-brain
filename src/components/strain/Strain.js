@@ -1,10 +1,15 @@
 import React from "react"
-import "./Location.css"
+// import "./.css"
 import Button from "react-bootstrap/Button"
+import Card from "react-bootstrap/Card"
 
-export const Location = ({ location }) => (
+
+
+export const Strain = ({ strain }) => (
     <section className="strain">
-        <h3 className="strain__name">{strain.name}</h3>
-        <Button variant="info">Details</Button>{' '}
-    </section>
+        <Card style={{ width: '18rem' }}>
+            <Card.Title>{strain}</Card.Title>
+            <Button variant="info">Details</Button>{' '}
+        </Card>
+    </section >
 )

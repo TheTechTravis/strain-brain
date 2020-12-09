@@ -14,7 +14,7 @@ export const StrainProvider = (props) => {
     const [strains, setStrains] = useState([])
 
     const getStrains = () => {
-        return fetch(`strainapi.evanbusse.com/${API_Key}/strains/search/all`)
+        return fetch(`http://strainapi.evanbusse.com/${API_Key.TheStrainAPI}/strains/search/all`)
             .then(res => res.json())
             .then(setStrains)
     }
@@ -38,7 +38,7 @@ export const StrainProvider = (props) => {
     */
     return (
         <StrainContext.Provider value={{
-            strains, addStrain, getStrains
+            strains, getStrains, addStrain
         }}>
             {props.children}
         </StrainContext.Provider>
