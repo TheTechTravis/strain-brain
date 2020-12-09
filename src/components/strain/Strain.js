@@ -9,7 +9,7 @@ export const Strain = ({ strain }) => (
     <section className="strain">
         <Card style={{ width: '18rem' }}>
             <Card.Title>{strain}</Card.Title>
-            <Button variant="info">Details</Button>{' '}
+            <Button variant="info" onClick={() => console.log("You clicked Details button")}>Details</Button>{' '}
         </Card>
     </section >
 )

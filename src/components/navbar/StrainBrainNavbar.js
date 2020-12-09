@@ -14,7 +14,6 @@ export const StrainBrainNavbar = (props) => {
                     <Nav.Link href="/conditions">Conditions</Nav.Link>
                     <Nav.Link href="/puff">Puff</Nav.Link>
                     <Nav.Link href="/pass">Pass</Nav.Link>
-
                 </Nav>
             </Navbar>
         </>
