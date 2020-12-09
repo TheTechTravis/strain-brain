@@ -17,8 +17,6 @@ export const StrainBrainNavbar = (props) => {
 
                 </Nav>
             </Navbar>
-            <h2>Strain Brain!</h2>
-            <small>Your personal guide to medical marijuana.</small>
         </>
     )
 }

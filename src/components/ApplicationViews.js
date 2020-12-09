@@ -3,7 +3,7 @@ import { Route } from "react-router-dom"
 import { StrainBrainNavbar } from "./navbar/StrainBrainNavbar"
 import { StrainProvider } from "./strain/StrainProvider"
 import { StrainList } from "./strain/StrainList"
-
+import { ConditionForm } from "./conditions/ConditionForm"
 export const ApplicationViews = (props) => {
     return (
         <>
@@ -16,7 +16,7 @@ export const ApplicationViews = (props) => {
 
             {/* User conditions route */}
             <Route exact path="/conditions">
-
+                <ConditionForm />
             </Route>
         </>
     )
