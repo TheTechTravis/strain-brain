@@ -7,12 +7,17 @@ import { StrainList } from "./strain/StrainList"
 export const ApplicationViews = (props) => {
     return (
         <>
-            {/* Render filtered list of strains on home view */}
+            {/* Render filtered list of strains on HOME view */}
             <StrainProvider>
                 <Route exact path="/">
                     <StrainList />
                 </Route>
             </StrainProvider>
+
+            {/* User conditions route */}
+            <Route exact path="/conditions">
+
+            </Route>
         </>
     )
 }
