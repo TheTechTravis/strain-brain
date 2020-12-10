@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react"
 import { API_Key } from "../../Settings"
 
 /*
-    The context is imported and used by individual components
-    that need data
+    The context is imported and used by individual components that need data
 */
 export const StrainContext = React.createContext()
 
@@ -31,10 +30,7 @@ export const StrainProvider = (props) => {
     }
 
     /*
-        You return a context provider which has the
-        `locations` state, the `addLocation` function,
-        and the `getLocation` function as keys. This
-        allows any child elements to access them.
+        You return a context provider which has the `strains` state, the `getStrains` function, and the `addStrains` function as keys. This allows any child elements to access them.
     */
     return (
         <StrainContext.Provider value={{

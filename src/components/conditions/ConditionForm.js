@@ -3,24 +3,29 @@ import Button from "react-bootstrap/Button"
 import Accordion from "react-bootstrap/Accordion"
 import Card from "react-bootstrap/Card"
 
-export const ConditionForm = () => (
-    <>
-        <div className="conditionsForm">
-            <Accordion>
-                <Card>
-                    <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="0">Click for Help</Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="0">
-                        <Card.Body>Please select any ailment/condition(s) below that apply to you.<br />Note: These values will be used to provide you with a personalized list of recommended cannabis strains.</Card.Body>
-                    </Accordion.Collapse>
-                </Card>
-            </Accordion>
+export const ConditionForm = () => {
+
+    // TODO: Iterate through all possible conditions and generate a checkbox component for each. See expected output below for clarity.
 
 
-            {/* Expected Output */}
+    (
+        <>
+            <div className="conditionsForm">
+                <Accordion>
+                    <Card>
+                        <Card.Header>
+                            <Accordion.Toggle as={Button} variant="link" eventKey="0">Click for Help</Accordion.Toggle>
+                        </Card.Header>
+                        <Accordion.Collapse eventKey="0">
+                            <Card.Body>Please select any ailment/condition(s) below that apply to you.<br />Note: These values will be used to provide you with a personalized list of recommended cannabis strains.</Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                </Accordion>
 
-            {/* <Form>
+
+                {/* Expected Output */}
+
+                {/* <Form>
                 <Form.Check type="checkbox" label="Anxiety" id="1" />
                 <Form.Check type="checkbox" label="Cramps" id="2" />
                 <Form.Check type="checkbox" label="Depression" id="3" />
@@ -38,6 +43,7 @@ export const ConditionForm = () => (
                 <Form.Check type="checkbox" label="Muscle Spasms" id="15" />
                 <Button variant="primary" onClick={() => console.log("You clicked Save Conditions")}>Save Conditions</Button>{' '}
             </Form> */}
-        </div>
-    </>
-)
+            </div>
+        </>
+    )
+}
