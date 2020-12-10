@@ -40,13 +40,24 @@ export const UserConditionProvider = (props) => {
             .then(setUserConditions)
     }
 
+    const addUserConditions = userCondition => {
+        return fetch("http://localhost:8088/userConditions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userCondition)
+        })
+            .then(getUserConditions)
+    }
+
     /*
         Return a context provider which has the `userConditions` state and the `getUserConditions` function as keys.
         This allows any child elements to access them.
     */
     return (
         <UserConditionContext.Provider value={{
-            userConditions, getUserConditions
+            userConditions, getUserConditions, addUserConditions
         }}>
             {props.children}
         </UserConditionContext.Provider>
