@@ -52,7 +52,7 @@ export const UserConditionProvider = (props) => {
     }
 
     /*
-        Return a context provider which has the `userConditions` state and the `getUserConditions` function as keys.
+        Return a context provider which has the `userConditions` state, the `getUserConditions`, and the `addUserConditions` function as keys.
         This allows any child elements to access them.
     */
     return (
