@@ -31,6 +31,12 @@ export const ConditionProvider = (props) => {
     )
 }
 
+
+
+
+/* 
+    UserConditionProvider starts here
+*/
 export const UserConditionProvider = (props) => {
     const [userConditions, setUserConditions] = useState([])
 
@@ -40,24 +46,24 @@ export const UserConditionProvider = (props) => {
             .then(setUserConditions)
     }
 
-    const addUserConditions = userCondition => {
+    const addConditionId = conditionId => {
         return fetch("http://localhost:8088/userConditions", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(userCondition)
+            body: JSON.stringify(conditionId)
         })
             .then(getUserConditions)
     }
 
     /*
-        Return a context provider which has the `userConditions` state, the `getUserConditions`, and the `addUserConditions` function as keys.
+        Return a context provider which has the `userConditions` state, the `getUserConditions`, and the `addUserCondition` function as keys.
         This allows any child elements to access them.
     */
     return (
         <UserConditionContext.Provider value={{
-            userConditions, getUserConditions, addUserConditions
+            userConditions, getUserConditions, addConditionId
         }}>
             {props.children}
         </UserConditionContext.Provider>

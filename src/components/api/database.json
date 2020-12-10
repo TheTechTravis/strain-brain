@@ -8,7 +8,11 @@
         }
     ],
     "userConditions": [
-        {}
+        {
+            "conditionId": 3,
+            "userId": 1,
+            "id": 1
+        }
     ],
     "conditions": [
         {

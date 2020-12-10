@@ -4,7 +4,7 @@ import { StrainBrainNavbar } from "./navbar/StrainBrainNavbar"
 import { StrainProvider } from "./strain/StrainProvider"
 import { StrainList } from "./strain/StrainList"
 import { ConditionForm } from "./conditions/ConditionForm"
-import { ConditionProvider } from "./conditions/ConditionProvider"
+import { ConditionProvider, UserConditionContext, UserConditionProvider } from "./conditions/ConditionProvider"
 export const ApplicationViews = (props) => {
     return (
         <>
@@ -17,9 +17,11 @@ export const ApplicationViews = (props) => {
 
             {/* User conditions route */}
             <ConditionProvider>
-                <Route exact path="/conditions">
-                    <ConditionForm />
-                </Route>
+                <UserConditionProvider>
+                    <Route exact path="/conditions">
+                        <ConditionForm />
+                    </Route>
+                </UserConditionProvider>
             </ConditionProvider>
         </>
     )
