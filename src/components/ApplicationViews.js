@@ -1,10 +1,11 @@
 import React from "react"
 import { Route } from "react-router-dom"
-import { StrainBrainNavbar } from "./navbar/StrainBrainNavbar"
 import { StrainProvider } from "./strain/StrainProvider"
 import { StrainList } from "./strain/StrainList"
 import { ConditionForm } from "./conditions/ConditionForm"
-import { ConditionProvider, UserConditionContext, UserConditionProvider } from "./conditions/ConditionProvider"
+import { ConditionProvider } from "./conditions/ConditionProvider"
+import { UserConditionProvider } from "./userConditions/UserConditionProvider"
+
 export const ApplicationViews = (props) => {
     return (
         <>

@@ -2,13 +2,14 @@ import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
 import Accordion from "react-bootstrap/Accordion"
 import Card from "react-bootstrap/Card"
-import { ConditionContext, UserConditionContext } from "./ConditionProvider"
+import { ConditionContext } from "./ConditionProvider"
+import { UserConditionContext } from "../userConditions/UserConditionProvider"
 import { useEffect, useContext, useState } from "react"
 
 export const ConditionForm = () => {
 
     const { conditions, getConditions } = useContext(ConditionContext)
-    const { userConditions, getUserConditions, addConditionId } = useContext(UserConditionContext)
+    const { userConditions, getUserConditions, addUserConditionId, deleteUserConditionId } = useContext(UserConditionContext)
 
     /* Get condition state on initialization. */
     useEffect(() => {
@@ -24,20 +25,18 @@ export const ConditionForm = () => {
 
         console.log("userId: ", userId, ", conditionId: ", event.target.id, ", Checked status: ", event.target.checked)
 
-
-
         if (event.target.checked) {
             // POST userId & conditionId to database
-            addConditionId({
+            addUserConditionId({
+                id: parseInt(event.target.id),
                 conditionId: parseInt(event.target.id),
                 userId: parseInt(userId)
             })
         }
-        else if (event.target.id.checked === false) {
+        else {
             // DELETE userID & conditionId from database
-
+            deleteUserConditionId(parseInt(event.target.id))
         }
-
     }
 
     return (
@@ -62,22 +61,8 @@ export const ConditionForm = () => {
                 {conditions.map(condition =>
                     <Form.Check type="checkbox" key={condition.id} label={condition.name} id={condition.id} onChange={event => { handleCheckbox(event) }} />
                     // <Form.Check type="checkbox" key={condition.id} label={condition.name} id={userCondition.id} defaultChecked={false} onChange={handleCheckbox} />
-
-                    // Map to see if a checkbox is checked, add that conditionId to array of objects to be POSTed to /userConditions?
-
                 )}
-                {/* <Button variant="primary" onClick={() => conditions.map(c => {
-                    if (c.checked) {
-                        addUserCondition(c.id)
-                    }
-                })}>Save Conditions</Button>{' '} */}
             </div>
         </>
     )
 }
-
-// Add onChange to form
-    // if .checked is true
-        // POST conditionId to endpoint
-    // else 
-        // DELETE
