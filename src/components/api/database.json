@@ -1,76 +1,82 @@
 {
-    "users": [
-        {
-            "email": "travis@outlook.com",
-            "password": "test",
-            "name": "Travis Stevenson",
-            "id": 1
-        }
-    ],
-    "userConditions": [],
-    "conditions": [
-        {
-            "id": 1,
-            "name": "Anxiety"
-        },
-        {
-            "id": 2,
-            "name": "Cramps"
-        },
-        {
-            "id": 3,
-            "name": "Depression"
-        },
-        {
-            "id": 4,
-            "name": "Insomnia"
-        },
-        {
-            "id": 5,
-            "name": "Pain"
-        },
-        {
-            "id": 6,
-            "name": "Stress"
-        },
-        {
-            "id": 7,
-            "name": "Lack of Appetite"
-        },
-        {
-            "id": 8,
-            "name": "Nausea"
-        },
-        {
-            "id": 9,
-            "name": "Headache"
-        },
-        {
-            "id": 10,
-            "name": "Fatigue"
-        },
-        {
-            "id": 11,
-            "name": "Eye Pressure"
-        },
-        {
-            "id": 12,
-            "name": "Inflammation"
-        },
-        {
-            "id": 13,
-            "name": "Spasticity"
-        },
-        {
-            "id": 14,
-            "name": "Seizures"
-        },
-        {
-            "id": 15,
-            "name": "Muscle Spasms"
-        }
-    ],
-    "strains": [
-        {}
-    ]
+  "users": [
+    {
+      "email": "travis@outlook.com",
+      "password": "test",
+      "name": "Travis Stevenson",
+      "id": 1
+    },
+    {
+      "email": "traviss@outlook.com",
+      "password": "testt",
+      "name": "Travis Stevenson",
+      "id": 2
+    }
+  ],
+  "userConditions": [],
+  "conditions": [
+    {
+      "id": 1,
+      "name": "Anxiety"
+    },
+    {
+      "id": 2,
+      "name": "Cramps"
+    },
+    {
+      "id": 3,
+      "name": "Depression"
+    },
+    {
+      "id": 4,
+      "name": "Insomnia"
+    },
+    {
+      "id": 5,
+      "name": "Pain"
+    },
+    {
+      "id": 6,
+      "name": "Stress"
+    },
+    {
+      "id": 7,
+      "name": "Lack of Appetite"
+    },
+    {
+      "id": 8,
+      "name": "Nausea"
+    },
+    {
+      "id": 9,
+      "name": "Headache"
+    },
+    {
+      "id": 10,
+      "name": "Fatigue"
+    },
+    {
+      "id": 11,
+      "name": "Eye Pressure"
+    },
+    {
+      "id": 12,
+      "name": "Inflammation"
+    },
+    {
+      "id": 13,
+      "name": "Spasticity"
+    },
+    {
+      "id": 14,
+      "name": "Seizures"
+    },
+    {
+      "id": 15,
+      "name": "Muscle Spasms"
+    }
+  ],
+  "strains": [
+    {}
+  ]
 }
