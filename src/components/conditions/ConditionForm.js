@@ -23,7 +23,7 @@ export const ConditionForm = () => {
     const handleCheckbox = (event) => {
         let userId = localStorage.getItem('app_user_id');
 
-        console.log("userId: ", userId, ", conditionId: ", event.target.id, ", Checked status: ", event.target.checked)
+        console.log("userId:", userId, ", conditionId:", event.target.id, ", posted to /userConditions endpoint. Checked status:", event.target.checked)
 
         if (event.target.checked) {
             // POST userId & conditionId to database
