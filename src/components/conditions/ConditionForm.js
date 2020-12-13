@@ -2,15 +2,49 @@ import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
 import Accordion from "react-bootstrap/Accordion"
 import Card from "react-bootstrap/Card"
+import { ConditionContext } from "./ConditionProvider"
+import { UserConditionContext } from "../userConditions/UserConditionProvider"
+import { useEffect, useContext, useState } from "react"
 
 export const ConditionForm = () => {
 
-    // TODO: Iterate through all possible conditions and generate a checkbox component for each. See expected output below for clarity.
+    const { conditions, getConditions } = useContext(ConditionContext)
+    const { userConditions, getUserConditions, addUserConditionId, deleteUserConditionId } = useContext(UserConditionContext)
 
+    /* Get condition state on initialization. */
+    useEffect(() => {
+        getConditions()
+    }, [])
 
-    (
+    useEffect(() => {
+        getUserConditions()
+    }, [])
+
+    const handleCheckbox = (event) => {
+        let userId = +localStorage.getItem('app_user_id');
+
+        console.log("userId:", userId, ", conditionId:", event.target.id, ", posted to /userConditions endpoint. Checked status:", event.target.checked)
+
+        if (event.target.checked) {
+            // POST userId & conditionId to database
+            addUserConditionId({
+                // id: parseInt(event.target.id),
+                conditionId: parseInt(event.target.id),
+                userId: parseInt(userId)
+            })
+        }
+        else {
+            // DELETE userID & conditionId from database
+            deleteUserConditionId(parseInt(event.target.id))
+            // getUserConditions by activeUser
+            // .checked = true
+        }
+    }
+
+    return (
         <>
             <div className="conditionsForm">
+                {/* Click for Help dropdown */}
                 <Accordion>
                     <Card>
                         <Card.Header>
@@ -22,27 +56,24 @@ export const ConditionForm = () => {
                     </Card>
                 </Accordion>
 
+                {/* 
+                    Map through array of all possible medical conditions from database.json and render a dynamically generated checkbox for each.
+                */}
 
-                {/* Expected Output */}
+                {conditions.map(condition => {
+                    const foundUserCondition = userConditions.find(uc => uc.conditionId === condition.id && uc.userId === +localStorage.getItem("app_user_id"))
 
-                {/* <Form>
-                <Form.Check type="checkbox" label="Anxiety" id="1" />
-                <Form.Check type="checkbox" label="Cramps" id="2" />
-                <Form.Check type="checkbox" label="Depression" id="3" />
-                <Form.Check type="checkbox" label="Insomnia" id="4" />
-                <Form.Check type="checkbox" label="Pain" id="5" />
-                <Form.Check type="checkbox" label="Stress" id="6" />
-                <Form.Check type="checkbox" label="Lack of Appetite" id="7" />
-                <Form.Check type="checkbox" label="Nausea" id="8" />
-                <Form.Check type="checkbox" label="Headache" id="9" />
-                <Form.Check type="checkbox" label="Fatigue" id="10" />
-                <Form.Check type="checkbox" label="Eye Pressure" id="11" />
-                <Form.Check type="checkbox" label="Inflammation" id="12" />
-                <Form.Check type="checkbox" label="Spasticity" id="13" />
-                <Form.Check type="checkbox" label="Seizures" id="14" />
-                <Form.Check type="checkbox" label="Muscle Spasms" id="15" />
-                <Button variant="primary" onClick={() => console.log("You clicked Save Conditions")}>Save Conditions</Button>{' '}
-            </Form> */}
+                    if (foundUserCondition) {
+                        return (<Form.Check type="checkbox" key={condition.id} label={condition.name} id={foundUserCondition.id} defaultChecked={false} onChange={event => { handleCheckbox(event) }} />
+                        )
+                    }
+                    else {
+                        return (
+                            <Form.Check type="checkbox" key={condition.id} label={condition.name} id={condition.id} onChange={handleCheckbox} />
+                        )
+                    }
+                }
+                )}
             </div>
         </>
     )

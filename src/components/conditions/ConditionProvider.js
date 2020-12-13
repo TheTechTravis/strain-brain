@@ -30,25 +30,3 @@ export const ConditionProvider = (props) => {
         </ConditionContext.Provider>
     )
 }
-
-export const UserConditionProvider = (props) => {
-    const [userConditions, setUserConditions] = useState([])
-
-    const getUserConditions = () => {
-        return fetch("http://localhost:8088/userConditions")
-            .then(res => res.json())
-            .then(setUserConditions)
-    }
-
-    /*
-        Return a context provider which has the `userConditions` state and the `getUserConditions` function as keys.
-        This allows any child elements to access them.
-    */
-    return (
-        <UserConditionContext.Provider value={{
-            userConditions, getUserConditions
-        }}>
-            {props.children}
-        </UserConditionContext.Provider>
-    )
-}
