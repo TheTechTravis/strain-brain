@@ -38,6 +38,8 @@ export const ConditionForm = () => {
             deleteUserConditionId(parseInt(event.target.id))
             // getUserConditions by activeUser
             // .checked = true
+            // event.target.checked = false
+
         }
     }
 
@@ -64,7 +66,7 @@ export const ConditionForm = () => {
                     const foundUserCondition = userConditions.find(uc => uc.conditionId === condition.id && uc.userId === +localStorage.getItem("app_user_id"))
 
                     if (foundUserCondition) {
-                        return (<Form.Check type="checkbox" key={condition.id} label={condition.name} id={foundUserCondition.id} defaultChecked={false} onChange={event => { handleCheckbox(event) }} />
+                        return (<Form.Check type="checkbox" key={condition.id} label={condition.name} id={foundUserCondition.id} defaultChecked={true} onChange={event => { handleCheckbox(event) }} />
                         )
                     }
                     else {
