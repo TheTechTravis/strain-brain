@@ -36,7 +36,9 @@ export const StrainList = () => {
     return (
         <div className="strains">
             {
-                Object.keys(strains).map(strain => <Strain key={strain.id} strain={strain} />)
+                // userConditions.map(userCondition => console.log((userCondition.conditionId))) // See id of all userConditions in database
+                // Object.values(strains).map((strain) => console.log(strain.effects.medical)) // Drill into effects
+                Object.keys(strains).map(strain => <Strain key={strain.id} strain={strain} />) // Renders strain cards
             }
         </div>
     )
