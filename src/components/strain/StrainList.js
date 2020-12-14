@@ -2,11 +2,12 @@ import React, { useContext, useEffect } from "react"
 import { Strain } from "./Strain"
 import "./Strain.css"
 import { StrainContext } from "./StrainProvider"
+import { UserConditionContext } from "../userConditions/UserConditionProvider"
 
 export const StrainList = () => {
     // This state changes when `getStrains()` is invoked below
     const { strains, getStrains } = useContext(StrainContext)
-
+    const { userConditions, getUserConditions } = useContext(UserConditionContext)
     /*
         What's the effect this is reponding to? Component was
         "mounted" to the DOM. React renders blank HTML first,
@@ -27,10 +28,15 @@ export const StrainList = () => {
         console.log(strains)
     }, [strains])
 
+    useEffect(() => {
+        getUserConditions()
+        console.log("UserConditions: ", userConditions)
+    }, [])
+
     return (
         <div className="strains">
             {
-                Object.keys(strains).map(s => <Strain key={s.id} strain={s} />)
+                Object.keys(strains).map(strain => <Strain key={strain.id} strain={strain} />)
             }
         </div>
     )

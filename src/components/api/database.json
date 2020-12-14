@@ -13,7 +13,13 @@
       "id": 2
     }
   ],
-  "userConditions": [],
+  "userConditions": [
+    {
+      "conditionId": 1,
+      "userId": 1,
+      "id": 1
+    }
+  ],
   "conditions": [
     {
       "id": 1,
