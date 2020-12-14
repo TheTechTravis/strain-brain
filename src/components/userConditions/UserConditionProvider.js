@@ -6,7 +6,7 @@ export const UserConditionProvider = (props) => {
     const [userConditions, setUserConditions] = useState([])
 
     const getUserConditions = () => {
-        return fetch("http://localhost:8088/userConditions")
+        return fetch("http://localhost:8088/userConditions?_expand=condition")
             .then(res => res.json())
             .then(setUserConditions)
     }

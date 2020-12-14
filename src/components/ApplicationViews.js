@@ -14,7 +14,7 @@ export const ApplicationViews = (props) => {
                 <UserConditionProvider>
                     <StrainProvider>
                         <Route exact path="/">
-                            <StrainList />
+                            <StrainList {...props} />
                         </Route>
                     </StrainProvider>
                 </UserConditionProvider>

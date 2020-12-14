@@ -7,7 +7,7 @@ import { ConditionContext } from "../conditions/ConditionProvider"
 
 export const StrainList = () => {
     // This state changes when `getStrains()` is invoked below
-    const { strains, getStrains } = useContext(StrainContext)
+    const { strains, getStrains, getStrainsByCondition } = useContext(StrainContext)
     const { userConditions, getUserConditions } = useContext(UserConditionContext)
     const { conditions, getConditions } = useContext(ConditionContext)
     /*
@@ -17,10 +17,13 @@ export const StrainList = () => {
     */
     useEffect(() => {
         console.log("StrainList: Initial render before data")
-        console.log(strains)
+        getUserConditions()
         getStrains()
+            .then(data => console.log(data))
+        getStrainsByCondition()
     }, [])
 
+    console.log(strains)
     /*
         This effect is solely for learning purposes. The effect
         it is responding to is that the location state changed.
@@ -63,11 +66,19 @@ export const StrainList = () => {
 
                 // console.log(userConditions) // See array of all condition names. This will be used to match with userConditions
 
-                Object.values(strains).map((strain) => console.log("Current strain's medical effects: ", strain.effects.medical)  // Drill into medical effects array
+                Object.values(strains).map((strain) => {
+                    console.log(strains)
+                    if (strain.effects.medical.includes("Cramps")) {
+
+                        return Object.keys(strains).map(strain => <Strain key={strain.id} strain={strain} />)
+
+                        // return <Strain key={strain.id} strain={strain} />
+
+                    }
+                })
 
 
-                    // Object.keys(strains).map(strain => <Strain key={strain.id} strain={strain} />) // Renders strain cards. Do this if userConditionId match conditionId
-                )
+                // Object.keys(strains).map(strain => <Strain key={strain.id} strain={strain} />) // Renders strain cards. Do this if userConditionId match conditionId
             }
         </div>
     )
