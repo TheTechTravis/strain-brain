@@ -48,20 +48,25 @@ export const StrainList = () => {
     return (
         <div className="strains">
             {
-                // Objective: Map through all strains. If strain includes one of the conditions that a user has checked, render that strain
-                strains.map(strain => {
-                    // If the current iterating strain includes a condition from the activeUser's set conditions (Array), continue evaluation.
-                    if (strain.effects.medical.includes(activeUsersSetConditions[0])) {
-                        console.log("This many strains were found that help with the provided ailment")
-                        console.log(userConditions) // This returns EVERY user's conditions. Need to filter to find only activeUser's conditions
+                activeUsersSetConditions.map(auc => {
 
-                        // filter and return userConditions that match active user's id
 
-                        // Map through all activeUserConditions and match them with conditions.id?
+                    // Objective: Map through all strains. If strain includes one of the conditions that a user has checked, render that strain
+                    strains.map(strain => {
+                        debugger
+                        // If the current iterating strain includes a condition from the activeUser's set conditions (Array), continue evaluation.
+                        if (strain.effects.medical.includes(auc)) {
+                            console.log("This many strains were found that help with the provided ailment")
+                            console.log(auc) // This returns EVERY user's conditions. Need to filter to find only activeUser's conditions
 
-                        // console.log(userConditions.id === conditions.id) // returns true
-                        return <Strain key={strain.id} strain={strain} />
-                    }
+                            // filter and return userConditions that match active user's id
+
+                            // Map through all activeUserConditions and match them with conditions.id?
+
+                            // console.log(userConditions.id === conditions.id) // returns true
+                            return <Strain key={strain.id} strain={strain} />
+                        }
+                    })
                 })
 
 
