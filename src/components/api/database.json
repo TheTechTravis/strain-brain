@@ -23,6 +23,16 @@
       "conditionId": 14,
       "userId": 2,
       "id": 2
+    },
+    {
+      "conditionId": 4,
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "conditionId": 9,
+      "userId": 1,
+      "id": 4
     }
   ],
   "conditions": [

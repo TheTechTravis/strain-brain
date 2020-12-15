@@ -39,30 +39,35 @@ export const StrainList = () => {
         })
     } */
 
+
+    const activeUserConditions = userConditions.filter(uc => +currentUser === uc.userId)
+    console.log(activeUserConditions)
+    const activeUsersSetConditions = activeUserConditions.map(auc => auc.condition.name)
+    console.log(activeUsersSetConditions)
+
     return (
         <div className="strains">
             {
-                // Map through all strains. If strain includes one of the conditions that a user has checked, render that strain
+                // Objective: Map through all strains. If strain includes one of the conditions that a user has checked, render that strain
                 strains.map(strain => {
-                    if (strain.effects.medical.includes("Muscle Spasms")) {
+                    // If the current iterating strain includes a condition from the activeUser's set conditions (Array), continue evaluation.
+                    if (strain.effects.medical.includes(activeUsersSetConditions[0])) {
                         console.log("This many strains were found that help with the provided ailment")
-                        console.log(userConditions)
+                        console.log(userConditions) // This returns EVERY user's conditions. Need to filter to find only activeUser's conditions
 
                         // filter and return userConditions that match active user's id
-                        const activeUserConditions = userConditions.filter(uc => +currentUser === uc.userId)
-                        console.log(activeUserConditions)
 
                         // Map through all activeUserConditions and match them with conditions.id?
 
                         // console.log(userConditions.id === conditions.id) // returns true
-                        return <Strain key={strain.id} strain={strain.name} />
+                        return <Strain key={strain.id} strain={strain} />
                     }
                 })
 
 
 
                 /* Object.values(strains).map((strain) => {
-                    console.log(strains)
+                console.log(strains)
                     if (strain.effects.medical.includes("Cramps")) {
 
                         return Object.keys(strains).map(strain => <Strain key={strain.id} strain={strain} />)
