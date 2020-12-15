@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react"
+import { Link } from "react-router-dom"
 import { Strain } from "./Strain"
 import "./Strain.css"
 import { StrainContext } from "./StrainProvider"
@@ -27,22 +28,6 @@ export const StrainList = () => {
     }, [])
 
     const currentUser = localStorage.getItem("app_user_id")
-
-    /* // Check all users in database and find userConditions that match current user's
-    const userObject = userConditions.find(
-        (uc) => parseInt(uc.userId) === currentUser
-    )
-
-    // Check each strain's medical properties
-    const filteredStrainsByCondition = () => {
-        Object.values(strains).map((strain) => {
-            (strain.effects.medical).map(() => {
-                console.log(userObject)
-            })
-        })
-    } */
-
-
     const activeUserConditions = userConditions.filter(uc => +currentUser === uc.userId)
     console.log(activeUserConditions)
     const activeUsersSetConditions = activeUserConditions.map(auc => auc.condition.name)
