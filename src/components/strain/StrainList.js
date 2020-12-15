@@ -42,11 +42,19 @@ export const StrainList = () => {
     return (
         <div className="strains">
             {
-
+                // Map through all strains. If strain includes one of the conditions that a user has checked, render that strain
                 strains.map(strain => {
                     if (strain.effects.medical.includes("Muscle Spasms")) {
                         console.log("This many strains were found that help with the provided ailment")
                         console.log(userConditions)
+
+                        // filter and return userConditions that match active user's id
+                        const activeUserConditions = userConditions.filter(uc => +currentUser === uc.userId)
+                        console.log(activeUserConditions)
+
+                        // Map through all activeUserConditions and match them with conditions.id?
+
+                        // console.log(userConditions.id === conditions.id) // returns true
                         return <Strain key={strain.id} strain={strain.name} />
                     }
                 })
