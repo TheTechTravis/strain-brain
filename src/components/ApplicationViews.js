@@ -10,11 +10,15 @@ export const ApplicationViews = (props) => {
     return (
         <>
             {/* Render filtered list of strains on HOME view */}
-            <StrainProvider>
-                <Route exact path="/">
-                    <StrainList />
-                </Route>
-            </StrainProvider>
+            <ConditionProvider>
+                <UserConditionProvider>
+                    <StrainProvider>
+                        <Route exact path="/">
+                            <StrainList {...props} />
+                        </Route>
+                    </StrainProvider>
+                </UserConditionProvider>
+            </ConditionProvider>
 
             {/* User conditions route */}
             <ConditionProvider>

@@ -13,66 +13,78 @@
       "id": 2
     }
   ],
-  "userConditions": [],
+  "userConditions": [
+    {
+      "conditionId": 14,
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "conditionId": 12,
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "conditionId": 13,
+      "userId": 1,
+      "id": 5
+    }
+  ],
   "conditions": [
     {
       "id": 1,
-      "name": "Anxiety"
-    },
-    {
-      "id": 2,
       "name": "Cramps"
     },
     {
-      "id": 3,
+      "id": 2,
       "name": "Depression"
     },
     {
-      "id": 4,
+      "id": 3,
       "name": "Insomnia"
     },
     {
-      "id": 5,
+      "id": 4,
       "name": "Pain"
     },
     {
-      "id": 6,
+      "id": 5,
       "name": "Stress"
     },
     {
-      "id": 7,
+      "id": 6,
       "name": "Lack of Appetite"
     },
     {
-      "id": 8,
+      "id": 7,
       "name": "Nausea"
     },
     {
-      "id": 9,
+      "id": 8,
       "name": "Headache"
     },
     {
-      "id": 10,
+      "id": 9,
       "name": "Fatigue"
     },
     {
-      "id": 11,
+      "id": 10,
       "name": "Eye Pressure"
     },
     {
-      "id": 12,
+      "id": 11,
       "name": "Inflammation"
     },
     {
-      "id": 13,
+      "id": 12,
       "name": "Spasticity"
     },
     {
-      "id": 14,
+      "id": 13,
       "name": "Seizures"
     },
     {
-      "id": 15,
+      "id": 14,
       "name": "Muscle Spasms"
     }
   ],
