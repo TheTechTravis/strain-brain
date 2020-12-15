@@ -48,42 +48,20 @@ export const StrainList = () => {
     return (
         <div className="strains">
             {
-                activeUsersSetConditions.map(auc => {
+                /* 
+                    Filter through array of every possible strain from API and only return
+                    strains which include at least one active user condition within medical
+                    properties of the current iterating strain. 
 
-
-                    // Objective: Map through all strains. If strain includes one of the conditions that a user has checked, render that strain
-                    strains.map(strain => {
-                        debugger
-                        // If the current iterating strain includes a condition from the activeUser's set conditions (Array), continue evaluation.
-                        if (strain.effects.medical.includes(auc)) {
-                            console.log("This many strains were found that help with the provided ailment")
-                            console.log(auc) // This returns EVERY user's conditions. Need to filter to find only activeUser's conditions
-
-                            // filter and return userConditions that match active user's id
-
-                            // Map through all activeUserConditions and match them with conditions.id?
-
-                            // console.log(userConditions.id === conditions.id) // returns true
-                            return <Strain key={strain.id} strain={strain} />
-                        }
-                    })
-                })
-
-
-
-                /* Object.values(strains).map((strain) => {
-                console.log(strains)
-                    if (strain.effects.medical.includes("Cramps")) {
-
-                        return Object.keys(strains).map(strain => <Strain key={strain.id} strain={strain} />)
-
-                        // return <Strain key={strain.id} strain={strain} />
-
-                    }
-                }) */
-
-
-                // Object.keys(strains).map(strain => <Strain key={strain.id} strain={strain} />)
+                    NOTE: In the future, lines 61 and 63 can be toggled with a button or
+                    some other affordance, so that the User can decide how their results
+                    are filtered.
+                */
+                // Line 61 -> renders strains that match ANY user conditions
+                strains.filter(strain => strain.effects.medical.find(condition => activeUsersSetConditions.includes(condition)))
+                    // Line 63 -> renders strains that match ALL user conditions
+                    // strains.filter(strain => activeUsersSetConditions.every(condition => strain.effects.medical.includes(condition)))
+                    .map(strain => <Strain key={strain.id} strain={strain} />)
             }
         </div>
     )
