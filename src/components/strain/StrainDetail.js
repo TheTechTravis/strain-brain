@@ -19,7 +19,7 @@ export const StrainDetail = (props) => {
     return (
         <section className="strain">
             <h3 className="strain__name">{strain.name}</h3>
-            <div>Description: </div>
+            <div>Description: Will go here, hopefully</div>
         </section>
     )
 }
