@@ -17,30 +17,10 @@ export const StrainList = () => {
     */
     useEffect(() => {
         console.log("StrainList: Initial render before data")
-        getUserConditions()
         getStrains()
-            .then(data => console.log(data))
-        getStrainsByCondition()
-    }, [])
-
-    console.log(strains)
-    /*
-        This effect is solely for learning purposes. The effect
-        it is responding to is that the location state changed.
-    */
-    useEffect(() => {
-        console.log("StrainList: Strain state changed")
-        console.log(strains)
-    }, [strains])
-
-    useEffect(() => {
         getUserConditions()
-        console.log("UserConditions: ", userConditions)
-    }, [])
-
-    useEffect(() => {
         getConditions()
-        console.log("Conditions: ", conditions)
+        console.log(strains)
     }, [])
 
     const currentUser = localStorage.getItem("app_user_id")
@@ -62,11 +42,18 @@ export const StrainList = () => {
     return (
         <div className="strains">
             {
-                // userConditions.map(userCondition => console.log((userCondition.conditionId))) // See id of all userConditions in database
 
-                // console.log(userConditions) // See array of all condition names. This will be used to match with userConditions
+                strains.map(strain => {
+                    if (strain.effects.medical.includes("Muscle Spasms")) {
+                        console.log("This many strains were found that help with the provided ailment")
+                        console.log(userConditions)
+                        return <Strain key={strain.id} strain={strain.name} />
+                    }
+                })
 
-                Object.values(strains).map((strain) => {
+
+
+                /* Object.values(strains).map((strain) => {
                     console.log(strains)
                     if (strain.effects.medical.includes("Cramps")) {
 
@@ -75,10 +62,10 @@ export const StrainList = () => {
                         // return <Strain key={strain.id} strain={strain} />
 
                     }
-                })
+                }) */
 
 
-                // Object.keys(strains).map(strain => <Strain key={strain.id} strain={strain} />) // Renders strain cards. Do this if userConditionId match conditionId
+                // Object.keys(strains).map(strain => <Strain key={strain.id} strain={strain} />)
             }
         </div>
     )

@@ -13,9 +13,23 @@ export const StrainProvider = (props) => {
     const [strains, setStrains] = useState([])
 
     const getStrains = () => {
-        return fetch(`http://strainapi.evanbusse.com/${API_Key.TheStrainAPI}/strains/search/all`)
-            .then(res => res.json())
-            .then(setStrains)
+        return fetch(`http://strainapi.evanbusse.com/${API_Key.TheStrainAPI}/strains/search/all`, {
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            }
+        })
+            .then(response => response.json())
+            .then(response => {
+                console.log(response)
+                const arrayOfStrains = Object.keys(response).map(strainKey => {
+                    const newStrainObject = response[strainKey]
+                    newStrainObject.name = strainKey
+                    return newStrainObject
+                })
+                console.log(arrayOfStrains)
+                setStrains(arrayOfStrains)
+            }
+            )
     }
 
     const getStrainsByCondition = (nameOfCondition) => {
