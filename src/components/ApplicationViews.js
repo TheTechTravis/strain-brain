@@ -4,7 +4,7 @@ import { StrainProvider } from "./strain/StrainProvider"
 import { StrainList } from "./strain/StrainList"
 import { ConditionForm } from "./conditions/ConditionForm"
 import { StrainDetail } from "./strain/StrainDetail"
-// import { StrainForm } from "./strain/StrainForm"
+import { StrainDetailForm } from "./strain/StrainDetailForm"
 import { ConditionProvider } from "./conditions/ConditionProvider"
 import { UserConditionProvider } from "./userConditions/UserConditionProvider"
 
@@ -39,11 +39,11 @@ export const ApplicationViews = (props) => {
             </StrainProvider>
 
             {/* Strain Detail Route */}
-            {/* <StrainProvider>
+            <StrainProvider>
                 <Route path="/details/form/:strainId(\d+)" render={
-                    props => <StrainForm {...props} />
+                    props => <StrainDetailForm {...props} />
                 } />
-            </StrainProvider> */}
+            </StrainProvider>
         </>
     )
 }
