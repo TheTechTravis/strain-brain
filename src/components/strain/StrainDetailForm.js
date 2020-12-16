@@ -27,12 +27,12 @@ export const StrainDetailForm = (props) => {
                 <p>Please select one of the options below.</p>
 
                 {/* Build strain object, POST it to /puff endpoint, and redirect to Puff List when link is clicked */}
-                <Link key={strain.id} to={`/puff`}>
+                <Link key={strain.id} id={strain.id} to={`/puff`}>
                     <p>Add to Puff List?</p>
                 </Link>
 
                 {/* Build strain object, POST it to /pass endpoint, and redirect to Puff List when link is clicked */}
-                <Link key={strain.id} to={`/pass`}>
+                <Link key={strain.id} id={strain.id} to={`/pass`}>
                     <p>Add to Pass List?</p>
                 </Link>
             </Container>
