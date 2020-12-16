@@ -20,13 +20,11 @@ export const StrainProvider = (props) => {
         })
             .then(response => response.json())
             .then(response => {
-                console.log(response)
                 const arrayOfStrains = Object.keys(response).map(strainKey => {
                     const newStrainObject = response[strainKey]
                     newStrainObject.name = strainKey
                     return newStrainObject
                 })
-                console.log(arrayOfStrains)
                 setStrains(arrayOfStrains)
             }
             )

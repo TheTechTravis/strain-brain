@@ -3,13 +3,15 @@ import { Route } from "react-router-dom"
 import { StrainProvider } from "./strain/StrainProvider"
 import { StrainList } from "./strain/StrainList"
 import { ConditionForm } from "./conditions/ConditionForm"
+import { StrainDetail } from "./strain/StrainDetail"
+// import { StrainForm } from "./strain/StrainForm"
 import { ConditionProvider } from "./conditions/ConditionProvider"
 import { UserConditionProvider } from "./userConditions/UserConditionProvider"
 
 export const ApplicationViews = (props) => {
     return (
         <>
-            {/* Render filtered list of strains on HOME view */}
+            {/* Recommended Strains Route */}
             <ConditionProvider>
                 <UserConditionProvider>
                     <StrainProvider>
@@ -20,7 +22,7 @@ export const ApplicationViews = (props) => {
                 </UserConditionProvider>
             </ConditionProvider>
 
-            {/* User conditions route */}
+            {/* User Conditions Route */}
             <ConditionProvider>
                 <UserConditionProvider>
                     <Route exact path="/conditions">
@@ -28,6 +30,20 @@ export const ApplicationViews = (props) => {
                     </Route>
                 </UserConditionProvider>
             </ConditionProvider>
+
+            {/* Strain Detail Route */}
+            <StrainProvider>
+                <Route path="/details/:strainId(\d+)" render={
+                    props => <StrainDetail {...props} />
+                } />
+            </StrainProvider>
+
+            {/* Strain Detail Route */}
+            {/* <StrainProvider>
+                <Route path="/details/form/:strainId(\d+)" render={
+                    props => <StrainForm {...props} />
+                } />
+            </StrainProvider> */}
         </>
     )
 }
