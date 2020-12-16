@@ -4,6 +4,7 @@ import Jumbotron from "react-bootstrap/Jumbotron"
 import Container from "react-bootstrap/Container"
 import Form from "react-bootstrap/Form"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
+import { Link } from "react-router-dom"
 
 export const StrainDetailForm = (props) => {
     const { strains, getStrains } = useContext(StrainContext)
@@ -78,14 +79,20 @@ export const StrainDetailForm = (props) => {
             <Container>
                 <h1>{strain.name}</h1>
                 {console.log(strain)}
-                <p>
-                    Please select one of the options below.
-                </p>
+                <p>Please select one of the options below.</p>
+
+                <Link key={strain.id} to={`/details/form/${strain.id}`}>
+                    <p>Add to Puff List?</p>
+                </Link>
+
+                <Link key={strain.id} to={`/details/form/${strain.id}`}>
+                    <p>Add to Pass List?</p>
+                </Link>
 
 
-                <Form.Check type="checkbox" label={"Add to Puff List"} id={strain.id} /> {/*onChange={handleCheckbox}*/}
-                <Form.Check type="checkbox" label={"Add to Pass List"} id={strain.id} />
-                <Form.Check type="checkbox" label={"Remove from Puff/Pass List"} id={strain.id} />
+                {/* <Form.Check type="checkbox" label={"Add to Puff List"} id={strain.id} /> onChange={handleCheckbox} */}
+                {/* <Form.Check type="checkbox" label={"Add to Pass List"} id={strain.id} /> */}
+                {/* <Form.Check type="checkbox" label={"Remove from Puff/Pass List"} id={strain.id} /> */}
             </Container>
         </Jumbotron>
     )
