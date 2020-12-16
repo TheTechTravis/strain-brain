@@ -21,53 +21,45 @@ export const StrainDetail = (props) => {
     useEffect(() => {
         const strain = strains.find(strain => strain.id === parseInt(props.match.params.strainId)) || {}
         setStrain(strain)
-    }, [])
+    }, [strains])
 
     return (
         <section className="strain">
-            <Jumbotron fluid>
-                <Container>
-                    <h1>{strain.name}</h1>
-                    <h4>Description: A description goes here.</h4>
-                    <h4>Effects:</h4>
-                    <div>
-                        <div>
-                            {/* Map through this strain and create a <p> for each positive effect */}
+            {strain.effects
+                ? (
+                    < Jumbotron fluid>
+                        <Container>
+                            <h1>{strain.name}</h1>
+                            <h4>Description: A description goes here.</h4>
+                            <h4>Effects:</h4>
+                            <div>
+                                <div>
+                                    {/* Map through this strain and create a <p> for each positive effect */}
                             Positive
-                            {console.log(strain.effects.positive)}
-                            {/* {strain.effects.positive.map(effect => <p>{effect}</p>)} */}
-                        </div>
-                        <div>
-                            {/* Map through this strain and create a <p> for each negative effect */}
+                            {/* {console.log(strain.effects.positive)} */}
+                                    {strain.effects.positive.map((effect, index) => <p key={index} style={{ color: 'green' }}>{effect}</p>)}
+                                </div>
+                                <div>
+                                    {/* Map through this strain and create a <p> for each negative effect */}
                             Negative
-                            {console.log(strain.effects.negative)}
-                            {/* {strain.effects.negative.map(effect => <p>{effect}</p>)} */}
-                        </div>
-                        <div>
-                            {/* Map through this strain and create a <p> for each medical effect */}
+                            {/* {console.log(strain.effects.negative)} */}
+                                    {strain.effects.negative.map((effect, index) => <p key={index} style={{ color: 'red' }}>{effect}</p>)}
+                                </div>
+                                <div>
+                                    {/* Map through this strain and create a <p> for each medical effect */}
                             Medical
-                            {console.log(strain.effects.medical)}
-                            {/* {strain.effects.medical.map(effect => <p>{effect}</p>)} */}
-                        </div>
-                    </div>
+                            {/* {console.log(strain.effects.medical)} */}
+                                    {strain.effects.medical.map((effect, index) => <p key={index} style={{ color: 'blue' }}>{effect}</p>)}
+                                </div>
+                            </div>
 
-                    <Link key={strain.id} to={`/details/form/${strain.id}`}>
-                        <Button variant="primary" >Add to Puff or Pass List?</Button>
-                    </Link>
+                            <Link key={strain.id} to={`/details/form/${strain.id}`}>
+                                <Button variant="primary" >Add to Puff or Pass List?</Button>
+                            </Link>
 
-                </Container>
-            </Jumbotron>
-
-
-            <Card style={{ width: '18rem' }}>
-                <Card.Body>
-                    <Card.Title>{strain.name}</Card.Title>
-                    <Link key={strain.id} to={`/details/form/${strain.id}`}>
-                        <Button variant="info" >Add to Puff/Pass?</Button>
-                    </Link>
-                </Card.Body>
-            </Card>
-
+                        </Container>
+                    </Jumbotron>)
+                : <h1>Loading...</h1>}
         </section >
     )
 }
