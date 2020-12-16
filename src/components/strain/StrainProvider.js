@@ -11,6 +11,7 @@ export const StrainContext = React.createContext()
  */
 export const StrainProvider = (props) => {
     const [strains, setStrains] = useState([])
+    const [description, setDescription] = useState([])
 
     const getStrains = () => {
         return fetch(`http://strainapi.evanbusse.com/${API_Key.TheStrainAPI}/strains/search/all`, {
@@ -26,8 +27,7 @@ export const StrainProvider = (props) => {
                     return newStrainObject
                 })
                 setStrains(arrayOfStrains)
-            }
-            )
+            })
     }
 
     const addStrain = strain => {
@@ -41,12 +41,18 @@ export const StrainProvider = (props) => {
             .then(getStrains)
     }
 
+    const getStrainDescriptionById = strainId => {
+        return fetch(`http://strainapi.evanbusse.com/${API_Key.TheStrainAPI}/strains/data/desc/${strainId}`)
+            .then(res => res.json())
+            .then(setDescription)
+    }
+
     /*
         You return a context provider which has the `strains` state, the `getStrains` function, and the `addStrains` function as keys. This allows any child elements to access them.
     */
     return (
         <StrainContext.Provider value={{
-            strains, getStrains, addStrain
+            strains, description, getStrains, addStrain, getStrainDescriptionById
         }}>
             {props.children}
         </StrainContext.Provider>
