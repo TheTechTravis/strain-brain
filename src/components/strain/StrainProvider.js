@@ -30,12 +30,6 @@ export const StrainProvider = (props) => {
             )
     }
 
-    const getStrainsByCondition = (nameOfCondition) => {
-        return fetch(`http://strainapi.evanbusse.com/${API_Key.TheStrainAPI}/strains/search/effect/${nameOfCondition}`)
-            .then(res => res.json())
-            .then(setStrains)
-    }
-
     const addStrain = strain => {
         return fetch("http://localhost:8088/strains", {
             method: "POST",
@@ -52,7 +46,7 @@ export const StrainProvider = (props) => {
     */
     return (
         <StrainContext.Provider value={{
-            strains, getStrains, addStrain, getStrainsByCondition
+            strains, getStrains, addStrain
         }}>
             {props.children}
         </StrainContext.Provider>

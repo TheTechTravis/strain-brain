@@ -11,7 +11,7 @@ import Button from "react-bootstrap/Button"
 
 export const StrainList = (props) => {
     // This state changes when `getStrains()` is invoked below
-    const { strains, getStrains, getStrainsByCondition } = useContext(StrainContext)
+    const { strains, getStrains } = useContext(StrainContext)
     const { userConditions, getUserConditions } = useContext(UserConditionContext)
     const { conditions, getConditions } = useContext(ConditionContext)
     /*
