@@ -9,7 +9,7 @@ import Accordion from "react-bootstrap/Accordion"
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 
-export const StrainList = () => {
+export const StrainList = (props) => {
     // This state changes when `getStrains()` is invoked below
     const { strains, getStrains, getStrainsByCondition } = useContext(StrainContext)
     const { userConditions, getUserConditions } = useContext(UserConditionContext)
@@ -20,18 +20,14 @@ export const StrainList = () => {
         then gets the data, then re-renders.
     */
     useEffect(() => {
-        console.log("StrainList: Initial render before data")
         getStrains()
         getUserConditions()
         getConditions()
-        console.log(strains)
     }, [])
 
     const currentUser = localStorage.getItem("app_user_id")
     const activeUserConditions = userConditions.filter(uc => +currentUser === uc.userId)
-    console.log(activeUserConditions)
     const activeUsersSetConditions = activeUserConditions.map(auc => auc.condition.name)
-    console.log(activeUsersSetConditions)
 
     return (
         <>

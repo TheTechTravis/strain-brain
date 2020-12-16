@@ -3,6 +3,8 @@ import { Route } from "react-router-dom"
 import { StrainProvider } from "./strain/StrainProvider"
 import { StrainList } from "./strain/StrainList"
 import { ConditionForm } from "./conditions/ConditionForm"
+import { StrainDetail } from "./strain/StrainDetail"
+// import { StrainForm } from "./strain/StrainForm"
 import { ConditionProvider } from "./conditions/ConditionProvider"
 import { UserConditionProvider } from "./userConditions/UserConditionProvider"
 
@@ -31,10 +33,17 @@ export const ApplicationViews = (props) => {
 
             {/* Strain Detail Route */}
             <StrainProvider>
-                {/* <Route path="/details/:strainId(\d+)" render={
+                <Route path="/details/:strainId(\d+)" render={
                     props => <StrainDetail {...props} />
-                } /> */}
+                } />
             </StrainProvider>
+
+            {/* Strain Detail Route */}
+            {/* <StrainProvider>
+                <Route path="/details/form/:strainId(\d+)" render={
+                    props => <StrainForm {...props} />
+                } />
+            </StrainProvider> */}
         </>
     )
 }
