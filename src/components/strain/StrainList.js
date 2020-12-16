@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react"
-import { Link } from "react-router-dom"
 import { Strain } from "./Strain"
 import "./Strain.css"
 import { StrainContext } from "./StrainProvider"
@@ -13,7 +12,7 @@ export const StrainList = (props) => {
     // This state changes when `getStrains()` is invoked below
     const { strains, getStrains } = useContext(StrainContext)
     const { userConditions, getUserConditions } = useContext(UserConditionContext)
-    const { conditions, getConditions } = useContext(ConditionContext)
+    const { getConditions } = useContext(ConditionContext)
     /*
         What's the effect this is reponding to? Component was
         "mounted" to the DOM. React renders blank HTML first,
