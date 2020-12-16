@@ -24,7 +24,6 @@ export const StrainDetailForm = (props) => {
         <Jumbotron fluid>
             <Container>
                 <h1>{strain.name}</h1>
-                {console.log(strain)}
                 <p>Please select one of the options below.</p>
 
                 {/* Build strain object, POST it to /puff endpoint, and redirect to Puff List when link is clicked */}
