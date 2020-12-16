@@ -81,18 +81,15 @@ export const StrainDetailForm = (props) => {
                 {console.log(strain)}
                 <p>Please select one of the options below.</p>
 
+                {/* Build strain object, POST it to /puff endpoint, and redirect to Puff List when link is clicked */}
                 <Link key={strain.id} to={`/details/form/${strain.id}`}>
                     <p>Add to Puff List?</p>
                 </Link>
 
+                {/* Build strain object, POST it to /pass endpoint, and redirect to Puff List when link is clicked */}
                 <Link key={strain.id} to={`/details/form/${strain.id}`}>
                     <p>Add to Pass List?</p>
                 </Link>
-
-
-                {/* <Form.Check type="checkbox" label={"Add to Puff List"} id={strain.id} /> onChange={handleCheckbox} */}
-                {/* <Form.Check type="checkbox" label={"Add to Pass List"} id={strain.id} /> */}
-                {/* <Form.Check type="checkbox" label={"Remove from Puff/Pass List"} id={strain.id} /> */}
             </Container>
         </Jumbotron>
     )
