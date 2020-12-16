@@ -28,6 +28,21 @@
       "conditionId": 12,
       "userId": 1,
       "id": 3
+    },
+    {
+      "conditionId": 1,
+      "userId": 2,
+      "id": 4
+    },
+    {
+      "conditionId": 2,
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "conditionId": 3,
+      "userId": 2,
+      "id": 6
     }
   ],
   "conditions": [
