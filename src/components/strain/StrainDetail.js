@@ -24,6 +24,12 @@ export const StrainDetail = (props) => {
     }, [strains])
 
     return (
+        /* 
+            Use ternary operators to set conditions to render page if data
+            is returned from fetch, or display a loading component if data
+            has not yet returned.
+            
+         */
         <section className="strain">
             {strain.effects
                 ? (
@@ -34,21 +40,18 @@ export const StrainDetail = (props) => {
                             <h4>Effects:</h4>
                             <div>
                                 <div>
-                                    {/* Map through this strain and create a <p> for each positive effect */}
-                            Positive
-                            {/* {console.log(strain.effects.positive)} */}
+                                    <h4>Positive:</h4>
+                                    {/* {console.log(strain.effects.positive)} */}
                                     {strain.effects.positive.map((effect, index) => <p key={index} style={{ color: 'green' }}>{effect}</p>)}
                                 </div>
                                 <div>
-                                    {/* Map through this strain and create a <p> for each negative effect */}
-                            Negative
-                            {/* {console.log(strain.effects.negative)} */}
+                                    <h4>Negative:</h4>
+                                    {/* {console.log(strain.effects.negative)} */}
                                     {strain.effects.negative.map((effect, index) => <p key={index} style={{ color: 'red' }}>{effect}</p>)}
                                 </div>
                                 <div>
-                                    {/* Map through this strain and create a <p> for each medical effect */}
-                            Medical
-                            {/* {console.log(strain.effects.medical)} */}
+                                    <h4>Medical:</h4>
+                                    {/* {console.log(strain.effects.medical)} */}
                                     {strain.effects.medical.map((effect, index) => <p key={index} style={{ color: 'blue' }}>{effect}</p>)}
                                 </div>
                             </div>
