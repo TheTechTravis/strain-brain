@@ -10,7 +10,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
 export const StrainDetail = (props) => {
-    const { strains, getStrains } = useContext(StrainContext)
+    const { strains, getStrains, description, getStrainDescriptionById } = useContext(StrainContext)
 
     const [strain, setStrain] = useState({})
 
@@ -21,6 +21,7 @@ export const StrainDetail = (props) => {
     useEffect(() => {
         const strain = strains.find(strain => strain.id === parseInt(props.match.params.strainId)) || {}
         setStrain(strain)
+        getStrainDescriptionById(strain.id)
     }, [strains])
 
     return (
@@ -36,7 +37,7 @@ export const StrainDetail = (props) => {
                     < Jumbotron fluid>
                         <Container>
                             <h1>{strain.name}</h1>
-                            <h4>Description: A description goes here.</h4>
+                            <h4>Description: {strain.description}</h4>
                             <h4>Effects:</h4>
                             <div>
                                 <div>

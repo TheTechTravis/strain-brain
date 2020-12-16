@@ -41,6 +41,7 @@ export const StrainProvider = (props) => {
             .then(getStrains)
     }
 
+    // This function will get a strain's description for the StrainDetail view
     const getStrainDescriptionById = strainId => {
         return fetch(`http://strainapi.evanbusse.com/${API_Key.TheStrainAPI}/strains/data/desc/${strainId}`)
             .then(res => res.json())
