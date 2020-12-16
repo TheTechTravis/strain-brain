@@ -11,9 +11,13 @@ export const StrainDetailForm = (props) => {
     const [strain, setStrain] = useState({})
 
     useEffect(() => {
-        const strain = strains.find(strain => strain.id === parseInt(props.match.params.strainId)) || {}
         getStrains()
     }, [])
+
+    useEffect(() => {
+        const strain = strains.find(strain => strain.id === parseInt(props.match.params.strainId)) || {}
+        setStrain(strain)
+    }, [strains])
 
     /*
         This is starter code for a function that dictates
@@ -40,7 +44,7 @@ export const StrainDetailForm = (props) => {
 
 
 
-    /* const ToggleButton = () => {
+    const ToggleButton = () => {
         const [radioValue, setRadioValue] = useState('3');
 
         const radios = [
@@ -66,21 +70,22 @@ export const StrainDetailForm = (props) => {
                 ))}
             </ButtonGroup>
         );
-    } */
+    }
 
 
     return (
         <Jumbotron fluid>
             <Container>
                 <h1>{strain.name}</h1>
+                {console.log(strain)}
                 <p>
-                    This is a modified jumbotron that occupies the entire horizontal space of
-                    its parent.
+                    Please select one of the options below.
                 </p>
 
 
-                <Form.Check type="checkbox" key={strain.id} label={"Add to Puff List"} id={strain.id} /> {/*onChange={handleCheckbox}*/}
-                <Form.Check type="checkbox" key={strain.id} label={"Add to Pass List"} id={strain.id} />
+                <Form.Check type="checkbox" label={"Add to Puff List"} id={strain.id} /> {/*onChange={handleCheckbox}*/}
+                <Form.Check type="checkbox" label={"Add to Pass List"} id={strain.id} />
+                <Form.Check type="checkbox" label={"Remove from Puff/Pass List"} id={strain.id} />
             </Container>
         </Jumbotron>
     )
