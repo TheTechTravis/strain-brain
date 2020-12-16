@@ -34,17 +34,20 @@ export const StrainDetail = (props) => {
                         <div>
                             {/* Map through this strain and create a <p> for each positive effect */}
                             Positive
+                            {console.log(strain.effects.positive)}
                             {/* {strain.effects.positive.map(effect => <p>{effect}</p>)} */}
                         </div>
                         <div>
                             {/* Map through this strain and create a <p> for each negative effect */}
-                            {/* {strain.effects.negative.map(effect => <p>{effect}</p>)} */}
                             Negative
+                            {console.log(strain.effects.negative)}
+                            {/* {strain.effects.negative.map(effect => <p>{effect}</p>)} */}
                         </div>
                         <div>
                             {/* Map through this strain and create a <p> for each medical effect */}
-                            {/* {strain.effects.medical.map(effect => <p>{effect}</p>)} */}
                             Medical
+                            {console.log(strain.effects.medical)}
+                            {/* {strain.effects.medical.map(effect => <p>{effect}</p>)} */}
                         </div>
                     </div>
 
