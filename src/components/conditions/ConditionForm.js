@@ -22,9 +22,7 @@ export const ConditionForm = () => {
 
     const handleCheckbox = (event) => {
         let userId = +localStorage.getItem('app_user_id');
-
         console.log("userId:", userId, ", conditionId:", event.target.id, ", posted to /userConditions endpoint. Checked status:", event.target.checked)
-
         if (event.target.checked) {
             // POST userId & conditionId to database
             addUserConditionId({
@@ -33,13 +31,11 @@ export const ConditionForm = () => {
                 userId: parseInt(userId)
             })
         }
-        else {
+        else if (event.target.checked === false) {
             // DELETE userID & conditionId from database
             deleteUserConditionId(parseInt(event.target.id))
-            // getUserConditions by activeUser
-            // .checked = true
-            // event.target.checked = false
-
+        } else {
+            return event.target.checked = false
         }
     }
 
