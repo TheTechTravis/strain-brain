@@ -8,6 +8,12 @@ import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+
+/* 
+    getBoth() returns an array of arrays. Sub[0]
+    is the array of all strains from API. Sub[1]
+    is my strain description.
+*/
 export const StrainDetail = (props) => {
     const {
         getBoth,

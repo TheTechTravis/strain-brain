@@ -15,21 +15,6 @@
   ],
   "userConditions": [
     {
-      "conditionId": 14,
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "conditionId": 13,
-      "userId": 1,
-      "id": 2
-    },
-    {
-      "conditionId": 12,
-      "userId": 1,
-      "id": 3
-    },
-    {
       "conditionId": 1,
       "userId": 2,
       "id": 4
