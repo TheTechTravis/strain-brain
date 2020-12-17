@@ -13,6 +13,7 @@ export const StrainDetail = (props) => {
     const { strains, getStrains, description, getStrainDescriptionById } = useContext(StrainContext)
 
     const [strain, setStrain] = useState({})
+    const [strainDescription, setDescription] = useState({})
 
     useEffect(() => {
         getStrains()
@@ -22,8 +23,11 @@ export const StrainDetail = (props) => {
         const strain = strains.find(strain => strain.id === parseInt(props.match.params.strainId)) || {}
         setStrain(strain)
         getStrainDescriptionById(strain.id)
+        setDescription(description)
+        console.log(strainDescription)
     }, [strains])
 
+    console.log(description)
     return (
         /* 
             Use ternary operators to set conditions to render page if data
@@ -32,12 +36,12 @@ export const StrainDetail = (props) => {
             
          */
         <section className="strain">
-            {strain.effects
+            {strain.effects && description
                 ? (
                     < Jumbotron fluid>
                         <Container>
                             <h1>{strain.name}</h1>
-                            <h4>Description: {strain.description}</h4>
+                            <h4>Description: <p>{description}</p></h4>
                             <h4>Effects:</h4>
                             <div>
                                 <div>

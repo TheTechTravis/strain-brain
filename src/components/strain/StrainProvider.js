@@ -45,7 +45,7 @@ export const StrainProvider = (props) => {
     const getStrainDescriptionById = strainId => {
         return fetch(`http://strainapi.evanbusse.com/${API_Key.TheStrainAPI}/strains/data/desc/${strainId}`)
             .then(res => res.json())
-            .then(setDescription)
+            .then(data => { setDescription(data.desc) })
     }
 
     /*
