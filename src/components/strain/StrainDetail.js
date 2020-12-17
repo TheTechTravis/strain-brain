@@ -23,11 +23,11 @@ export const StrainDetail = (props) => {
         const strain = strains.find(strain => strain.id === parseInt(props.match.params.strainId)) || {}
         setStrain(strain)
         getStrainDescriptionById(strain.id)
-        setDescription(description)
         console.log(strainDescription)
     }, [strains])
 
     console.log(description)
+
     return (
         /* 
             Use ternary operators to set conditions to render page if data
