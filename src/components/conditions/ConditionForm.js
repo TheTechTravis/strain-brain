@@ -18,26 +18,32 @@ export const ConditionForm = () => {
 
     useEffect(() => {
         getUserConditions()
-    }, [])
+    }, [userConditions])
 
     const handleCheckbox = (event) => {
-        let userId = +localStorage.getItem('app_user_id');
-        console.log("userId:", userId, ", conditionId:", event.target.id, ", posted to /userConditions endpoint. Checked status:", event.target.checked)
+        let userId = +localStorage.getItem("app_user_id");
+        console.log(
+            "userId:",
+            userId,
+            ", conditionId:",
+            event.target.id,
+            ", posted to /userConditions endpoint. Checked status:",
+            event.target.checked
+        );
         if (event.target.checked) {
             // POST userId & conditionId to database
             addUserConditionId({
                 // id: parseInt(event.target.id),
                 conditionId: parseInt(event.target.id),
-                userId: parseInt(userId)
-            })
-        }
-        else if (event.target.checked === false) {
+                userId: parseInt(userId),
+            });
+        } else if (event.target.checked === false) {
             // DELETE userID & conditionId from database
-            deleteUserConditionId(parseInt(event.target.id))
+            deleteUserConditionId(parseInt(event.target.id));
         } else {
-            return event.target.checked = false
+            return (event.target.checked = false);
         }
-    }
+    };
 
     return (
         <>
@@ -62,12 +68,12 @@ export const ConditionForm = () => {
                     const foundUserCondition = userConditions.find(uc => uc.conditionId === condition.id && uc.userId === +localStorage.getItem("app_user_id"))
 
                     if (foundUserCondition) {
-                        return (<Form.Check type="checkbox" key={condition.id} label={condition.name} id={foundUserCondition.id} defaultChecked={true} onChange={event => { handleCheckbox(event) }} />
+                        return (<Form.Check type="checkbox" key={condition.id} label={condition.name} id={foundUserCondition.id} defaultChecked={true} onClick={event => { handleCheckbox(event) }} />
                         )
                     }
                     else {
                         return (
-                            <Form.Check type="checkbox" key={condition.id} label={condition.name} id={condition.id} onChange={handleCheckbox} />
+                            <Form.Check type="checkbox" key={condition.id} label={condition.name} id={condition.id} onClick={event => { handleCheckbox(event) }} />
                         )
                     }
                 }
