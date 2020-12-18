@@ -28,6 +28,11 @@
       "conditionId": 3,
       "userId": 2,
       "id": 6
+    },
+    {
+      "conditionId": 4,
+      "userId": 1,
+      "id": 7
     }
   ],
   "conditions": [

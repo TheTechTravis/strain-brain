@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { Strain } from "./Strain"
 import "./Strain.css"
+import "./StrainList.css"
 import { StrainContext } from "./StrainProvider"
 import { UserConditionContext } from "../userConditions/UserConditionProvider"
 import { ConditionContext } from "../conditions/ConditionProvider"
@@ -30,7 +31,7 @@ export const StrainList = (props) => {
 
     return (
         <>
-            <Accordion>
+            <Accordion style={{ backgroundColor: "#164A41" }}>
                 <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey="0">Click for Help</Accordion.Toggle>
@@ -40,7 +41,7 @@ export const StrainList = (props) => {
                     </Accordion.Collapse>
                 </Card>
             </Accordion>
-            <div className="strains">
+            <div className="strains" style={{ padding: "1rem" }}>
 
                 {
 
