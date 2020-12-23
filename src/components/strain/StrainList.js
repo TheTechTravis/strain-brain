@@ -31,7 +31,7 @@ export const StrainList = (props) => {
 
     return (
         <>
-            <Accordion style={{ backgroundColor: "#164A41" }}>
+            <Accordion>
                 <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey="0">Click for Help</Accordion.Toggle>
