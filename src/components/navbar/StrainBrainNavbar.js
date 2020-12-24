@@ -9,7 +9,6 @@ export const StrainBrainNavbar = (props) => {
                 <Nav className="mr-auto">
                     <Nav.Link href="/"> <img src={logo} alt={"Strain Brain Logo"} width={100} height={100} /> </Nav.Link>
                 </Nav>
-                <Navbar.Brand className="mx-auto" href="/" style={{ color: "#ffc107" }}>Strain Brain</Navbar.Brand>
 
                 <Nav className="ml-auto">
                     <Nav.Link href="/conditions" style={{ color: "#ffc107" }}>Conditions</Nav.Link>
