@@ -54,8 +54,14 @@ export const StrainDetail = (props) => {
                     <Container>
                         <h1>{strain.name}</h1>
                         <br />
+
                         <h3>Strain Description:</h3>
-                        <h5>{strainDescription.desc}</h5>
+                        {strainDescription.desc ? (
+                            <h5>{strainDescription.desc}</h5>
+                        ) :
+                            (
+                                <h5>No description available.</h5>
+                            )}
                         <br />
 
                         <h2>Strain Effects:</h2>
