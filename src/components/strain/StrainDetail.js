@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { StrainContext } from "./StrainProvider";
-import "./Strain.css";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
+import Spinner from "react-bootstrap/Spinner";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
@@ -53,12 +53,20 @@ export const StrainDetail = (props) => {
                 <Jumbotron fluid>
                     <Container>
                         <h1>{strain.name}</h1>
-                        <h4>
-                            Description: <p>{strainDescription.desc}</p>
-                        </h4>
-                        <h4>Effects:</h4>
-                        <div>
-                            <div>
+                        <br />
+
+                        <h3>Strain Description:</h3>
+                        {strainDescription.desc ? (
+                            <h5>{strainDescription.desc}</h5>
+                        ) :
+                            (
+                                <h5>No description available.</h5>
+                            )}
+                        <br />
+
+                        <h2>Strain Effects:</h2>
+                        <div style={{ display: "flex", justifyContent: "space-around" }}>
+                            <div style={{ border: "2px solid black", width: "20rem" }}>
                                 <h4>Positive:</h4>
                                 {/* {console.log(strain.effects.positive)} */}
                                 {strain.effects.positive.map((effect, index) => (
@@ -67,7 +75,7 @@ export const StrainDetail = (props) => {
                                     </p>
                                 ))}
                             </div>
-                            <div>
+                            <div style={{ border: "2px solid black", width: "20rem" }}>
                                 <h4>Negative:</h4>
                                 {/* {console.log(strain.effects.negative)} */}
                                 {strain.effects.negative.map((effect, index) => (
@@ -76,7 +84,7 @@ export const StrainDetail = (props) => {
                                     </p>
                                 ))}
                             </div>
-                            <div>
+                            <div style={{ border: "2px solid black", width: "20rem" }}>
                                 <h4>Medical:</h4>
                                 {/* {console.log(strain.effects.medical)} */}
                                 {strain.effects.medical.map((effect, index) => (
@@ -86,13 +94,20 @@ export const StrainDetail = (props) => {
                                 ))}
                             </div>
                         </div>
+                        <br />
                         <Link key={strain.id} to={`/details/form/${strain.id}`}>
                             <Button variant="primary">Add to Puff or Pass List?</Button>
                         </Link>
                     </Container>
                 </Jumbotron>
             ) : (
-                    <h1>Loading...</h1>
+                    <>
+                        <h1>Loading Details...</h1>
+                        <div className="text-center">
+                            <Spinner animation="border text-warning" role="status">
+                            </Spinner>
+                        </div>
+                    </>
                 )}
         </section>
     );

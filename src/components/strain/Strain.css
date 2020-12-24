@@ -3,13 +3,14 @@
 .strains {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    background-color: #164A41;
+    /* background-color: #9DC88D; */
 }
 
 /* Give each card a border and margin to make a clear distinction between cards */
 
 .strain {
-    border: 1px solid black;
     margin-bottom: 2rem;
     text-align: center;
 }
