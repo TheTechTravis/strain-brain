@@ -29,7 +29,7 @@ export const StrainList = (props) => {
     const currentUser = localStorage.getItem("app_user_id")
     const activeUserConditions = userConditions.filter(uc => +currentUser === uc.userId)
     const activeUsersSetConditions = activeUserConditions.map(auc => auc.condition.name)
-    console.log(strains)
+
     return (
         strains.length > 1900 ? (
             <>

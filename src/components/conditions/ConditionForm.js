@@ -4,7 +4,8 @@ import Accordion from "react-bootstrap/Accordion"
 import Card from "react-bootstrap/Card"
 import { ConditionContext } from "./ConditionProvider"
 import { UserConditionContext } from "../userConditions/UserConditionProvider"
-import { useEffect, useContext, useState } from "react"
+import { useEffect, useContext } from "react"
+import { Link } from "react-router-dom"
 
 export const ConditionForm = () => {
 
@@ -79,6 +80,9 @@ export const ConditionForm = () => {
                 }
                 )}
             </div>
+            <Link to={`/`}>
+                <Button variant="outline-warning"> View Results </Button>
+            </Link>
         </>
     )
 }
