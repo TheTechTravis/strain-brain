@@ -26,13 +26,13 @@ export const StrainProvider = (props) => {
                 setStrains(arrayOfStrains)
             })
     }
-    const addStrain = strain => {
-        return fetch("http://localhost:8088/strains", {
+    const addStrain = (strain, location) => {
+        return fetch(`http://localhost:8088/${location}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(strain)
+            body: JSON.stringify(strain, location)
         })
             .then(getStrains)
     }
@@ -53,6 +53,8 @@ export const StrainProvider = (props) => {
             .then(data => data.json())]
         return Promise.all(fetches)
     }
+
+
     /*
         You return a context provider which has the `strains` state, the `getStrains` function, and the `addStrains` function as keys. This allows any child elements to access them.
     */

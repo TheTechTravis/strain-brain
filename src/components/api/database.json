@@ -94,6 +94,95 @@
     }
   ],
   "strains": [
-    {}
-  ]
+    {},
+    {
+      "id": 2,
+      "race": "sativa",
+      "flavors": [
+        "Spicy/Herbal",
+        "Pungent",
+        "Earthy"
+      ],
+      "effects": {
+        "positive": [
+          "Euphoric",
+          "Happy",
+          "Creative",
+          "Energetic",
+          "Talkative"
+        ],
+        "negative": [
+          "Dry Mouth"
+        ],
+        "medical": [
+          "Depression",
+          "Pain",
+          "Stress",
+          "Lack Of Appetite",
+          "Nausea",
+          "Headache"
+        ]
+      },
+      "name": "African"
+    },
+    {
+      "id": 1,
+      "race": "hybrid",
+      "flavors": [
+        "Earthy",
+        "Chemical",
+        "Pine"
+      ],
+      "effects": {
+        "positive": [
+          "Relaxed",
+          "Hungry",
+          "Happy",
+          "Sleepy"
+        ],
+        "negative": [
+          "Dizzy"
+        ],
+        "medical": [
+          "Depression",
+          "Insomnia",
+          "Pain",
+          "Stress",
+          "Lack Of Appetite"
+        ]
+      },
+      "name": "Afpak"
+    }
+  ],
+  "puff": [
+    {
+      "id": 1,
+      "race": "hybrid",
+      "flavors": [
+        "Earthy",
+        "Chemical",
+        "Pine"
+      ],
+      "effects": {
+        "positive": [
+          "Relaxed",
+          "Hungry",
+          "Happy",
+          "Sleepy"
+        ],
+        "negative": [
+          "Dizzy"
+        ],
+        "medical": [
+          "Depression",
+          "Insomnia",
+          "Pain",
+          "Stress",
+          "Lack Of Appetite"
+        ]
+      },
+      "name": "Afpak"
+    }
+  ],
+  "pass": []
 }

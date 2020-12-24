@@ -6,7 +6,7 @@ import Spinner from "react-bootstrap/Spinner"
 import { Link } from "react-router-dom"
 
 export const StrainDetailForm = (props) => {
-    const { strains, getStrains } = useContext(StrainContext)
+    const { strains, getStrains, addStrain } = useContext(StrainContext)
 
     const [strain, setStrain] = useState({})
 
@@ -27,7 +27,8 @@ export const StrainDetailForm = (props) => {
                     <p>Please select one of the options below.</p>
 
                     {/* Build strain object, POST it to /puff endpoint, and redirect to Puff List when link is clicked */}
-                    <Link key={strain.id} id={strain.id} to={`/puff`}>
+                    {console.log(strain)}
+                    <Link key={strain.id} id={strain.id} to={`/puff`} onClick={() => addStrain(strain, "puff")}>
                         <p>Add to Puff List?</p>
                     </Link>
 
@@ -36,7 +37,7 @@ export const StrainDetailForm = (props) => {
                         <p>Add to Pass List?</p>
                     </Link>
                 </Container>
-            </Jumbotron>
+            </Jumbotron >
         ) : (
                 <>
                     <h1 style={{ textAlign: "center" }}>Loading...</h1>
