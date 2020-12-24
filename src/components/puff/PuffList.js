@@ -1,8 +1,24 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
+import { PuffListContext } from "./PuffListProvider"
+import { Strain } from "../strain/Strain"
 
 export const PuffList = (props) => {
+    const { strains, getPuffStrains } = useContext(PuffListContext)
 
+    useEffect(() => {
+        getPuffStrains()
+    }, [])
+    console.log(strains)
+
+    const currentUser = localStorage.getItem("app_user_id")
+
+    // RENDER THIS
     return (
-        <h1>Puff List</h1>
+        <>
+            <h1>Puff List</h1>
+            {
+                strains.map(strain => <Strain key={strain.id} strain={strain} />)
+            }
+        </>
     )
 }

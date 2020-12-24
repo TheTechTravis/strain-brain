@@ -56,9 +56,9 @@ export const StrainList = (props) => {
                             some other affordance, so that the User can decide how their results
                             are filtered.
                         */
-                        // Line 61 -> renders strains that match ANY user conditions
+                        // Line 60 -> renders strains that match ANY user conditions
                         strains.filter(strain => strain.effects.medical.find(condition => activeUsersSetConditions.includes(condition)))
-                            // Line 63 -> renders strains that match ALL user conditions
+                            // Line 62 -> renders strains that match ALL user conditions
                             // strains.filter(strain => activeUsersSetConditions.every(condition => strain.effects.medical.includes(condition)))
                             .map(strain => <Strain key={strain.id} strain={strain} />)
                     }

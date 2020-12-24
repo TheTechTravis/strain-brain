@@ -7,6 +7,7 @@ import { StrainDetail } from "./strain/StrainDetail"
 import { StrainDetailForm } from "./strain/StrainDetailForm"
 import { ConditionProvider } from "./conditions/ConditionProvider"
 import { UserConditionProvider } from "./userConditions/UserConditionProvider"
+import { PuffListProvider } from "./puff/PuffListProvider"
 import { PuffList } from "./puff/PuffList"
 import { PassList } from "./pass/PassList"
 
@@ -50,9 +51,11 @@ export const ApplicationViews = (props) => {
             {/* Puff Route */}
             <ConditionProvider>
                 <UserConditionProvider>
-                    <Route exact path="/puff">
-                        <PuffList />
-                    </Route>
+                    <PuffListProvider>
+                        <Route exact path="/puff">
+                            <PuffList />
+                        </Route>
+                    </PuffListProvider>
                 </UserConditionProvider>
             </ConditionProvider>
 

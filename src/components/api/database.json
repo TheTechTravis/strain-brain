@@ -182,6 +182,39 @@
         ]
       },
       "name": "Afpak"
+    },
+    {
+      "id": 4,
+      "race": "hybrid",
+      "flavors": [
+        "Pine",
+        "Earthy",
+        "Flowery"
+      ],
+      "effects": {
+        "positive": [
+          "Relaxed",
+          "Happy",
+          "Creative",
+          "Uplifted",
+          "Sleepy"
+        ],
+        "negative": [
+          "Dizzy",
+          "Dry Mouth",
+          "Paranoid",
+          "Dry Eyes"
+        ],
+        "medical": [
+          "Pain",
+          "Stress",
+          "Headache",
+          "Fatigue",
+          "Headaches",
+          "Muscle Spasms"
+        ]
+      },
+      "name": "Afwreck"
     }
   ],
   "pass": []
