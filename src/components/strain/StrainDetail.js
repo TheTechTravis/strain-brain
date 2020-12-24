@@ -96,7 +96,7 @@ export const StrainDetail = (props) => {
                         </div>
                         <br />
                         <Link key={strain.id} to={`/details/form/${strain.id}`}>
-                            <Button variant="primary">Add to Puff or Pass List?</Button>
+                            <Button variant="outline-warning">Add to Puff or Pass List?</Button>
                         </Link>
                     </Container>
                 </Jumbotron>

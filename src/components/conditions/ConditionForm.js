@@ -6,6 +6,7 @@ import { ConditionContext } from "./ConditionProvider"
 import { UserConditionContext } from "../userConditions/UserConditionProvider"
 import { useEffect, useContext } from "react"
 import { Link } from "react-router-dom"
+import "./ConditionForm.css"
 
 export const ConditionForm = () => {
 
