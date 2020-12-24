@@ -2,8 +2,7 @@ import React, { useState, useEffect, useContext } from "react"
 import { StrainContext } from "./StrainProvider"
 import Jumbotron from "react-bootstrap/Jumbotron"
 import Container from "react-bootstrap/Container"
-import Form from "react-bootstrap/Form"
-import ButtonGroup from "react-bootstrap/ButtonGroup"
+import Spinner from "react-bootstrap/Spinner"
 import { Link } from "react-router-dom"
 
 export const StrainDetailForm = (props) => {
@@ -21,21 +20,31 @@ export const StrainDetailForm = (props) => {
     }, [strains])
 
     return (
-        <Jumbotron fluid>
-            <Container>
-                <h1>{strain.name}</h1>
-                <p>Please select one of the options below.</p>
+        strain.name ? (
+            <Jumbotron fluid>
+                <Container>
+                    <h1>{strain.name}</h1>
+                    <p>Please select one of the options below.</p>
 
-                {/* Build strain object, POST it to /puff endpoint, and redirect to Puff List when link is clicked */}
-                <Link key={strain.id} id={strain.id} to={`/puff`}>
-                    <p>Add to Puff List?</p>
-                </Link>
+                    {/* Build strain object, POST it to /puff endpoint, and redirect to Puff List when link is clicked */}
+                    <Link key={strain.id} id={strain.id} to={`/puff`}>
+                        <p>Add to Puff List?</p>
+                    </Link>
 
-                {/* Build strain object, POST it to /pass endpoint, and redirect to Puff List when link is clicked */}
-                <Link key={strain.id} id={strain.id} to={`/pass`}>
-                    <p>Add to Pass List?</p>
-                </Link>
-            </Container>
-        </Jumbotron>
+                    {/* Build strain object, POST it to /pass endpoint, and redirect to Puff List when link is clicked */}
+                    <Link key={strain.id} id={strain.id} to={`/pass`}>
+                        <p>Add to Pass List?</p>
+                    </Link>
+                </Container>
+            </Jumbotron>
+        ) : (
+                <>
+                    <h1 style={{ textAlign: "center" }}>Loading...</h1>
+                    <div className="text-center">
+                        <Spinner animation="border text-warning" role="status">
+                        </Spinner>
+                    </div>
+                </>
+            )
     )
 }
