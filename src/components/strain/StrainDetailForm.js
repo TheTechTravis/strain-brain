@@ -18,7 +18,7 @@ export const StrainDetailForm = (props) => {
         const strain = strains.find(strain => strain.id === parseInt(props.match.params.strainId)) || {}
         setStrain(strain)
     }, [strains])
-
+    console.log(strain)
     return (
         strain.name ? (
             <Jumbotron fluid>

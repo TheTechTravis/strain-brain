@@ -9,6 +9,7 @@ export const PuffList = (props) => {
         getPuffStrains()
     }, [])
     console.log(strains)
+    console.log(strains[0])
 
     const currentUser = localStorage.getItem("app_user_id")
 
