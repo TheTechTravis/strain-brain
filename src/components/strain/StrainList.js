@@ -8,6 +8,7 @@ import { ConditionContext } from "../conditions/ConditionProvider"
 import Accordion from "react-bootstrap/Accordion"
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
+import Spinner from "react-bootstrap/Spinner"
 
 export const StrainList = (props) => {
     // This state changes when `getStrains()` is invoked below
@@ -63,8 +64,13 @@ export const StrainList = (props) => {
                     }
                 </div>
             </>
-        ) : (
-                <h1 style={{ textAlign: "center" }}>Loading...</h1>
+        ) : (<>
+            <h1 style={{ textAlign: "center" }}>Loading Results...</h1>
+            <div className="text-center">
+                <Spinner animation="border text-warning" role="status">
+                </Spinner>
+            </div>
+        </>
             )
     )
 }
