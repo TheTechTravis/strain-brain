@@ -40,7 +40,7 @@ export const StrainDetailForm = (props) => {
             </Jumbotron >
         ) : (
                 <>
-                    <h1 style={{ textAlign: "center" }}>Loading...</h1>
+                    <h1 style={{ textAlign: "center", color: "white" }}>Loading...</h1>
                     <div className="text-center">
                         <Spinner animation="border text-warning" role="status">
                         </Spinner>

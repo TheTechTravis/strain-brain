@@ -5,3 +5,8 @@
 button {
     margin-left: 1rem !important;
 }
+
+.conditionsForm {
+    background-color: #4d774e;
+    border: 2px solid #9dc88d;
+}

@@ -49,18 +49,18 @@ export const ConditionForm = () => {
 
     return (
         <>
+            <Accordion>
+                <Card>
+                    <Card.Header>
+                        <Accordion.Toggle as={Button} variant="link" eventKey="0">Click for Help</Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="0">
+                        <Card.Body>Please select any ailment/condition(s) below that apply to you.<br />Note: These values will be used to provide you with a personalized list of recommended cannabis strains.</Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+            </Accordion>
             <div className="conditionsForm">
                 {/* Click for Help dropdown */}
-                <Accordion>
-                    <Card>
-                        <Card.Header>
-                            <Accordion.Toggle as={Button} variant="link" eventKey="0">Click for Help</Accordion.Toggle>
-                        </Card.Header>
-                        <Accordion.Collapse eventKey="0">
-                            <Card.Body>Please select any ailment/condition(s) below that apply to you.<br />Note: These values will be used to provide you with a personalized list of recommended cannabis strains.</Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-                </Accordion>
 
                 {/* 
                     Map through array of all possible medical conditions from database.json and render a dynamically generated checkbox for each.
@@ -81,6 +81,7 @@ export const ConditionForm = () => {
                 }
                 )}
             </div>
+            <br />
             <Link to={`/`}>
                 <Button variant="outline-warning"> View Results </Button>
             </Link>

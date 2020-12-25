@@ -65,7 +65,7 @@ export const StrainList = (props) => {
                 </div>
             </>
         ) : (<>
-            <h1 style={{ textAlign: "center" }}>Loading Results...</h1>
+            <h1 style={{ textAlign: "center", color: "white" }}>Loading Results...</h1>
             <div className="text-center">
                 <Spinner animation="border text-warning" role="status">
                 </Spinner>
