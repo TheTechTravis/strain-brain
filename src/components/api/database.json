@@ -219,6 +219,36 @@
         ]
       },
       "name": "Afternoon Delight"
+    },
+    {
+      "id": 6,
+      "race": "hybrid",
+      "flavors": [
+        "Skunk",
+        "Pepper",
+        "Citrus"
+      ],
+      "effects": {
+        "positive": [
+          "Euphoric",
+          "Happy",
+          "Creative",
+          "Uplifted",
+          "Focused"
+        ],
+        "negative": [
+          "Dry Mouth",
+          "Dry Eyes"
+        ],
+        "medical": [
+          "Depression",
+          "Stress",
+          "Cramps",
+          "Fatigue",
+          "Eye Pressure"
+        ]
+      },
+      "name": "Agent Tangie"
     }
   ],
   "pass": []

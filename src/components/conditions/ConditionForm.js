@@ -55,7 +55,7 @@ export const ConditionForm = () => {
                         <Accordion.Toggle as={Button} variant="link" eventKey="0">Click for Help</Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="0">
-                        <Card.Body>Please select any ailment/condition(s) below that apply to you.<br />Note: These values will be used to provide you with a personalized list of recommended cannabis strains.</Card.Body>
+                        <Card.Body style={{ color: "black" }}>Please select any ailment/condition(s) below that apply to you.<br />Note: These values will be used to provide you with a personalized list of recommended cannabis strains.</Card.Body>
                     </Accordion.Collapse>
                 </Card>
             </Accordion>

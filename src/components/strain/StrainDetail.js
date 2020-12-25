@@ -50,7 +50,7 @@ export const StrainDetail = (props) => {
              */
         <section className="strain">
             {strain.effects ? (
-                <Jumbotron fluid>
+                <Jumbotron fluid style={{ backgroundColor: "#4d774e" }}>
                     <Container>
                         <h1>{strain.name}</h1>
                         <br />
@@ -64,19 +64,19 @@ export const StrainDetail = (props) => {
                             )}
                         <br />
 
-                        <h2>Strain Effects:</h2>
+                        <h3>Effects:</h3>
                         <div style={{ display: "flex", justifyContent: "space-around" }}>
-                            <div style={{ border: "2px solid black", width: "20rem" }}>
-                                <h4>Positive:</h4>
+                            <div style={{ border: "2px solid #164a41", width: "20rem", backgroundColor: "#9dc88d" }}>
+                                <h4><u style={{ color: "black" }}>Positive:</u></h4>
                                 {/* {console.log(strain.effects.positive)} */}
                                 {strain.effects.positive.map((effect, index) => (
-                                    <p key={index} style={{ color: "green" }}>
+                                    <p key={index} style={{ color: "#164a41" }}>
                                         {effect}
                                     </p>
                                 ))}
                             </div>
-                            <div style={{ border: "2px solid black", width: "20rem" }}>
-                                <h4>Negative:</h4>
+                            <div style={{ border: "2px solid #164a41", width: "20rem", backgroundColor: "#9dc88d" }}>
+                                <h4><u style={{ color: "black" }}>Negative:</u></h4>
                                 {/* {console.log(strain.effects.negative)} */}
                                 {strain.effects.negative.map((effect, index) => (
                                     <p key={index} style={{ color: "red" }}>
@@ -84,8 +84,8 @@ export const StrainDetail = (props) => {
                                     </p>
                                 ))}
                             </div>
-                            <div style={{ border: "2px solid black", width: "20rem" }}>
-                                <h4>Medical:</h4>
+                            <div style={{ border: "2px solid #164a41", width: "20rem", backgroundColor: "#9dc88d" }}>
+                                <h4><u style={{ color: "black" }}>Medical:</u></h4>
                                 {/* {console.log(strain.effects.medical)} */}
                                 {strain.effects.medical.map((effect, index) => (
                                     <p key={index} style={{ color: "blue" }}>
@@ -108,7 +108,8 @@ export const StrainDetail = (props) => {
                             </Spinner>
                         </div>
                     </>
-                )}
-        </section>
+                )
+            }
+        </section >
     );
 };
