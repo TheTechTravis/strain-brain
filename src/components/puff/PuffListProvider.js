@@ -7,20 +7,9 @@ export const PuffListProvider = (props) => {
     const [description, setDescription] = useState({})
 
     const getPuffStrains = () => {
-        return fetch("http://localhost:8088/puff", {
-            // headers: {
-            //     "Access-Control-Allow-Origin": "*"
-            // }
-        })
+        return fetch("http://localhost:8088/puff")
             .then(response => response.json())
-            .then(response => {
-                const arrayOfStrains = Object.keys(response).map(strainKey => {
-                    const newStrainObject = response[strainKey]
-                    newStrainObject.name = strainKey
-                    return newStrainObject
-                })
-                setStrains(arrayOfStrains)
-            })
+            .then(setStrains)
     }
 
     return (

@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from "react"
 import { PuffListContext } from "./PuffListProvider"
 import { Strain } from "../strain/Strain"
+import { Link } from "react-router-dom"
+import Button from "react-bootstrap/Button"
 
 export const PuffList = (props) => {
     const { strains, getPuffStrains } = useContext(PuffListContext)
@@ -20,6 +22,10 @@ export const PuffList = (props) => {
             {
                 strains.map(strain => <Strain key={strain.id} strain={strain} />)
             }
+
+            <Link to={`/`}>
+                <Button variant="outline-warning"> Go Home </Button>
+            </Link>
         </>
     )
 }
