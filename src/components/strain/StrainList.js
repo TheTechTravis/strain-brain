@@ -33,17 +33,31 @@ export const StrainList = (props) => {
     return (
         strains.length > 1900 ? (
             <>
-                <Accordion>
-                    <Card>
-                        <Card.Header>
-                            <Accordion.Toggle as={Button} variant="link" eventKey="0">Click for Help</Accordion.Toggle>
-                        </Card.Header>
-                        <Accordion.Collapse eventKey="0">
-                            <Card.Body>Your strain recommendations are dependent on the medical conditons that you set in the "Conditions" tab.<br />Note: You will not see any strain recommendations until you set at least one medical condition.</Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-                </Accordion>
-                <h1>Results Found: {
+                {strains.filter(strain => strain.effects.medical.find(condition => activeUsersSetConditions.includes(condition))).length === 0 ? (
+                    <Accordion defaultActiveKey="0">
+                        <Card>
+                            <Card.Header>
+                                <Accordion.Toggle as={Button} variant="link" eventKey="0">Click for Help</Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey="0">
+                                <Card.Body style={{ color: "black" }}>Your strain recommendations are dependent on the medical conditons that you set in the "Conditions" tab.<br />Note: You will not see any strain recommendations until you set at least one medical condition.</Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                    </Accordion>
+                ) : <Accordion>
+                        <Card>
+                            <Card.Header>
+                                <Accordion.Toggle as={Button} variant="link" eventKey="0"> Toggle Help </Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey="0">
+                                <Card.Body style={{ color: "black" }}>Your strain recommendations are dependent on the medical conditons that you set in the "Conditions" tab.<br />Note: You will not see any strain recommendations until you set at least one medical condition.</Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                    </Accordion>}
+
+                <br />
+
+                <h1 style={{ marginLeft: "1.5rem" }}>Results Found: {
                     strains.filter(strain => strain.effects.medical.find(condition => activeUsersSetConditions.includes(condition))).length
                 }
                 </h1>

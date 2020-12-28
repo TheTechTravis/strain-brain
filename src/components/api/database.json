@@ -36,11 +36,6 @@
       "id": 6
     },
     {
-      "conditionId": 5,
-      "userId": 1,
-      "id": 7
-    },
-    {
       "conditionId": 13,
       "userId": 3,
       "id": 8
@@ -106,35 +101,6 @@
   ],
   "strains": [],
   "puff": [
-    {
-      "id": 1,
-      "race": "hybrid",
-      "flavors": [
-        "Earthy",
-        "Chemical",
-        "Pine"
-      ],
-      "effects": {
-        "positive": [
-          "Relaxed",
-          "Hungry",
-          "Happy",
-          "Sleepy"
-        ],
-        "negative": [
-          "Dizzy"
-        ],
-        "medical": [
-          "Depression",
-          "Insomnia",
-          "Pain",
-          "Stress",
-          "Lack Of Appetite"
-        ]
-      },
-      "name": "Afpak",
-      "userId": 1
-    },
     {
       "id": 3,
       "race": "hybrid",
@@ -220,40 +186,37 @@
       },
       "name": "C3PO",
       "userId": 3
-    }
-  ],
-  "pass": [
+    },
     {
-      "id": 2,
-      "race": "sativa",
+      "id": 117,
+      "race": "hybrid",
       "flavors": [
-        "Spicy/Herbal",
-        "Pungent",
-        "Earthy"
+        "Earthy",
+        "Flowery",
+        "Grape"
       ],
       "effects": {
         "positive": [
+          "Relaxed",
           "Euphoric",
           "Happy",
-          "Creative",
           "Energetic",
-          "Talkative"
+          "Giggly"
         ],
-        "negative": [
-          "Dry Mouth"
-        ],
+        "negative": [],
         "medical": [
-          "Depression",
           "Pain",
-          "Stress",
           "Lack Of Appetite",
-          "Nausea",
-          "Headache"
+          "Inflammation",
+          "Seizures",
+          "Muscle Spasms"
         ]
       },
-      "name": "African",
+      "name": "Bedford Glue",
       "userId": 1
-    },
+    }
+  ],
+  "pass": [
     {
       "id": 4,
       "race": "hybrid",
