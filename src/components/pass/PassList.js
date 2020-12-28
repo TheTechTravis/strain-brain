@@ -15,7 +15,7 @@ export const PassList = (props) => {
     console.log(strains)
     console.log(strains[0])
 
-    const currentUser = localStorage.getItem("app_user_id")
+    const activeUser = +localStorage.getItem("app_user_id")
 
     // RENDER THIS
     return (
@@ -31,7 +31,7 @@ export const PassList = (props) => {
 
             <div className="strains">
                 {
-                    strains.map(strain => <StrainOnPass key={strain.id} strain={strain} />)
+                    strains.filter(strain => strain.userId === activeUser).map(strain => <StrainOnPass key={strain.id} strain={strain} />)
                 }
             </div>
 
