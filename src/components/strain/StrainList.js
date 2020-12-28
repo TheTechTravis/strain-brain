@@ -43,6 +43,10 @@ export const StrainList = (props) => {
                         </Accordion.Collapse>
                     </Card>
                 </Accordion>
+                <h1>Results Found: {
+                    strains.filter(strain => strain.effects.medical.find(condition => activeUsersSetConditions.includes(condition))).length
+                }
+                </h1>
                 <div className="strains" style={{ padding: "1rem" }}>
 
                     {

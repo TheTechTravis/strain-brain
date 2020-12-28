@@ -11,6 +11,12 @@
       "password": "testt",
       "name": "Travis Stevenson",
       "id": 2
+    },
+    {
+      "email": "granny@email.com",
+      "password": "mydogsam",
+      "name": "granny jones",
+      "id": 3
     }
   ],
   "userConditions": [
@@ -33,6 +39,11 @@
       "conditionId": 5,
       "userId": 1,
       "id": 7
+    },
+    {
+      "conditionId": 13,
+      "userId": 3,
+      "id": 8
     }
   ],
   "conditions": [
@@ -156,6 +167,59 @@
       },
       "name": "Afternoon Delight",
       "userId": 2
+    },
+    {
+      "id": 367,
+      "race": "hybrid",
+      "flavors": [
+        "Blueberry"
+      ],
+      "effects": {
+        "positive": [
+          "Relaxed",
+          "Euphoric",
+          "Happy",
+          "Uplifted",
+          "Focused"
+        ],
+        "negative": [],
+        "medical": [
+          "Depression",
+          "Spasticity"
+        ]
+      },
+      "name": "Blue Wonder",
+      "userId": 3
+    },
+    {
+      "id": 443,
+      "race": "hybrid",
+      "flavors": [
+        "Pine",
+        "Earthy",
+        "Lemon"
+      ],
+      "effects": {
+        "positive": [
+          "Relaxed",
+          "Hungry",
+          "Happy",
+          "Uplifted",
+          "Sleepy"
+        ],
+        "negative": [
+          "Dry Mouth"
+        ],
+        "medical": [
+          "Depression",
+          "Pain",
+          "Stress",
+          "Inflammation",
+          "Spasticity"
+        ]
+      },
+      "name": "C3PO",
+      "userId": 3
     }
   ],
   "pass": [
@@ -223,6 +287,70 @@
       },
       "name": "Afwreck",
       "userId": 2
+    },
+    {
+      "id": 368,
+      "race": "hybrid",
+      "flavors": [
+        "Blueberry",
+        "Earthy",
+        "Honey"
+      ],
+      "effects": {
+        "positive": [
+          "Creative",
+          "Energetic",
+          "Talkative"
+        ],
+        "negative": [
+          "Dizzy",
+          "Dry Mouth",
+          "Dry Eyes",
+          "Anxious"
+        ],
+        "medical": [
+          "Depression",
+          "Pain",
+          "Stress",
+          "Headaches",
+          "Spasticity"
+        ]
+      },
+      "name": "Blue Wreck",
+      "userId": 3
+    },
+    {
+      "id": 612,
+      "race": "hybrid",
+      "flavors": [
+        "Tobacco",
+        "Cheese",
+        "Pepper"
+      ],
+      "effects": {
+        "positive": [
+          "Relaxed",
+          "Euphoric",
+          "Happy",
+          "Talkative"
+        ],
+        "negative": [
+          "Dizzy",
+          "Dry Mouth",
+          "Paranoid",
+          "Dry Eyes",
+          "Anxious"
+        ],
+        "medical": [
+          "Depression",
+          "Insomnia",
+          "Stress",
+          "Inflammation",
+          "Spasticity"
+        ]
+      },
+      "name": "Critical Bilbo",
+      "userId": 3
     }
   ]
 }
