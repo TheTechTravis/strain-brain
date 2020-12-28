@@ -37,8 +37,8 @@ export const Login = props => {
     return (
         <main className="container--login">
             <dialog className="dialog dialog--auth" ref={existDialog}>
-                <div>User does not exist</div>
-                <button className="button--close" onClick={e => existDialog.current.close()}>Close</button>
+                <div style={{ color: "black" }}>User does not exist</div>
+                <Button className="button--close" variant="outline-danger" onClick={e => existDialog.current.close()}>Close</Button>
             </dialog>
             <dialog className="dialog dialog--password" ref={passwordDialog}>
                 <div>Password does not match</div>
