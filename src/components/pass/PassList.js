@@ -27,6 +27,12 @@ export const PassList = (props) => {
             </Link>
 
             <br />
+
+            <h3 style={{ marginLeft: "1.5rem" }}>Results Found: {
+                strains.filter(strain => strain.userId === activeUser).length
+            }
+            </h3>
+
             <br />
 
             <div className="strains">
