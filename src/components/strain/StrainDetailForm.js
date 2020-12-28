@@ -17,9 +17,13 @@ export const StrainDetailForm = (props) => {
 
     useEffect(() => {
         const strain = strains.find(strain => strain.id === parseInt(props.match.params.strainId)) || {}
+        strain.userId = +localStorage.getItem("app_user_id")
         setStrain(strain)
     }, [strains])
     console.log(strain)
+
+
+
     return (
         strain.name ? (
             <Jumbotron fluid style={{ backgroundColor: "#4d774e" }}>
@@ -34,7 +38,7 @@ export const StrainDetailForm = (props) => {
                     </Link>
 
                     {/* Build strain object, POST it to /pass endpoint, and redirect to Puff List when link is clicked */}
-                    <Link key={strain.id} id={strain.id} to={`/pass`}>
+                    <Link key={strain.id} id={strain.id} to={`/pass`} onClick={() => addStrain(strain, "pass")}>
                         <Button variant="outline-warning">Add to Pass List</Button>
                     </Link>
                 </Container>

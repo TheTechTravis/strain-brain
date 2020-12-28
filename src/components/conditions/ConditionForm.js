@@ -80,11 +80,13 @@ export const ConditionForm = () => {
                     }
                 }
                 )}
+
+                <br />
+
+                <Link to={`/`}>
+                    <Button variant="outline-warning" style={{ marginBottom: "1rem" }}> View Results </Button>
+                </Link>
             </div>
-            <br />
-            <Link to={`/`}>
-                <Button variant="outline-warning"> View Results </Button>
-            </Link>
         </>
     )
 }

@@ -4,6 +4,7 @@ import { Strain } from "../strain/Strain"
 import { Link } from "react-router-dom"
 import Button from "react-bootstrap/Button"
 import "../strain/Strain.css"
+import { StrainOnPuff } from "../strain/StrainOnPuff"
 
 export const PuffList = (props) => {
     const { strains, getPuffStrains } = useContext(PuffListContext)
@@ -30,7 +31,7 @@ export const PuffList = (props) => {
 
             <div className="strains">
                 {
-                    strains.map(strain => <Strain key={strain.id} strain={strain} />)
+                    strains.map(strain => <StrainOnPuff key={strain.id} strain={strain} />)
                 }
             </div>
 

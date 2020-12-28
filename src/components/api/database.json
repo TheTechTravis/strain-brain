@@ -121,7 +121,74 @@
           "Lack Of Appetite"
         ]
       },
-      "name": "Afpak"
+      "name": "Afpak",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "race": "hybrid",
+      "flavors": [
+        "Pepper",
+        "Flowery",
+        "Pine"
+      ],
+      "effects": {
+        "positive": [
+          "Relaxed",
+          "Hungry",
+          "Euphoric",
+          "Uplifted",
+          "Tingly"
+        ],
+        "negative": [
+          "Dizzy",
+          "Dry Mouth",
+          "Paranoid"
+        ],
+        "medical": [
+          "Depression",
+          "Insomnia",
+          "Pain",
+          "Stress",
+          "Cramps",
+          "Headache"
+        ]
+      },
+      "name": "Afternoon Delight",
+      "userId": 2
+    }
+  ],
+  "pass": [
+    {
+      "id": 2,
+      "race": "sativa",
+      "flavors": [
+        "Spicy/Herbal",
+        "Pungent",
+        "Earthy"
+      ],
+      "effects": {
+        "positive": [
+          "Euphoric",
+          "Happy",
+          "Creative",
+          "Energetic",
+          "Talkative"
+        ],
+        "negative": [
+          "Dry Mouth"
+        ],
+        "medical": [
+          "Depression",
+          "Pain",
+          "Stress",
+          "Lack Of Appetite",
+          "Nausea",
+          "Headache"
+        ]
+      },
+      "name": "African",
+      "userId": 1
     },
     {
       "id": 4,
@@ -154,102 +221,8 @@
           "Muscle Spasms"
         ]
       },
-      "name": "Afwreck"
-    },
-    {
-      "id": 10,
-      "race": "sativa",
-      "flavors": [
-        "Earthy",
-        "Pine",
-        "Minty"
-      ],
-      "effects": {
-        "positive": [
-          "Euphoric",
-          "Happy",
-          "Creative",
-          "Energetic",
-          "Uplifted"
-        ],
-        "negative": [
-          "Dizzy",
-          "Dry Mouth",
-          "Paranoid",
-          "Dry Eyes"
-        ],
-        "medical": [
-          "Depression",
-          "Pain",
-          "Stress",
-          "Fatigue",
-          "Headaches"
-        ]
-      },
-      "name": "Alaskan Ice"
-    },
-    {
-      "id": 3,
-      "race": "hybrid",
-      "flavors": [
-        "Pepper",
-        "Flowery",
-        "Pine"
-      ],
-      "effects": {
-        "positive": [
-          "Relaxed",
-          "Hungry",
-          "Euphoric",
-          "Uplifted",
-          "Tingly"
-        ],
-        "negative": [
-          "Dizzy",
-          "Dry Mouth",
-          "Paranoid"
-        ],
-        "medical": [
-          "Depression",
-          "Insomnia",
-          "Pain",
-          "Stress",
-          "Cramps",
-          "Headache"
-        ]
-      },
-      "name": "Afternoon Delight"
-    },
-    {
-      "id": 6,
-      "race": "hybrid",
-      "flavors": [
-        "Skunk",
-        "Pepper",
-        "Citrus"
-      ],
-      "effects": {
-        "positive": [
-          "Euphoric",
-          "Happy",
-          "Creative",
-          "Uplifted",
-          "Focused"
-        ],
-        "negative": [
-          "Dry Mouth",
-          "Dry Eyes"
-        ],
-        "medical": [
-          "Depression",
-          "Stress",
-          "Cramps",
-          "Fatigue",
-          "Eye Pressure"
-        ]
-      },
-      "name": "Agent Tangie"
+      "name": "Afwreck",
+      "userId": 2
     }
-  ],
-  "pass": []
+  ]
 }
