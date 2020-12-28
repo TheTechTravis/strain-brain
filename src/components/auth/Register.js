@@ -90,7 +90,7 @@ export const Register = (props) => {
                     <input ref={verifyPassword} type="password" name="verifyPassword" className="form-control" placeholder="Verify password" required />
                 </fieldset>
                 <fieldset>
-                    <button type="submit"> Sign in </button>
+                    <button type="submit" style={{ color: "black" }}> Sign in </button>
                 </fieldset>
             </form>
         </main>

@@ -64,14 +64,14 @@ export const Login = props => {
                             required />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <button type="submit" style={{ color: "black" }}>
                             Sign in
                         </button>
                     </fieldset>
                 </form>
-            </section>
-            <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+                <Link to="/register">
+                    <button style={{ color: "black" }}> Not a member? Register here!</button>
+                </Link>
             </section>
         </main>
     )
