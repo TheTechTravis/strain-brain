@@ -1,6 +1,7 @@
 import React, { useRef } from "react"
 import { Link } from "react-router-dom";
 import "./Login.css"
+import Button from "react-bootstrap/Button"
 
 
 export const Login = props => {
@@ -64,14 +65,18 @@ export const Login = props => {
                             required />
                     </fieldset>
                     <fieldset>
-                        <button type="submit" style={{ color: "black" }}>
-                            Sign in
-                        </button>
+
+                        <br />
+                        <div>
+                            <Button type="submit" variant="outline-warning" >
+                                Sign in
+                        </Button>
+                            <Link to="/register">
+                                <Button variant="outline-warning" > Not a member? Register here!</Button>
+                            </Link>
+                        </div>
                     </fieldset>
                 </form>
-                <Link to="/register">
-                    <button style={{ color: "black" }}> Not a member? Register here!</button>
-                </Link>
             </section>
         </main>
     )
