@@ -38,7 +38,7 @@ export const StrainDetailForm = (props) => {
                     </Link>
 
                     {/* Build strain object, POST it to /pass endpoint, and redirect to Puff List when link is clicked */}
-                    <Link key={strain.id} id={strain.id} to={`/pass`} onClick={() => addStrain(strain, "pass")}>
+                    <Link key={strain.id + "thisIsUnique"} id={strain.id} to={`/pass`} onClick={() => addStrain(strain, "pass")}>
                         <Button variant="outline-warning">Add to Pass List</Button>
                     </Link>
                 </Container>

@@ -39,6 +39,11 @@
       "conditionId": 13,
       "userId": 3,
       "id": 8
+    },
+    {
+      "conditionId": 1,
+      "userId": 1,
+      "id": 9
     }
   ],
   "conditions": [
@@ -188,31 +193,34 @@
       "userId": 3
     },
     {
-      "id": 117,
+      "id": 6,
       "race": "hybrid",
       "flavors": [
-        "Earthy",
-        "Flowery",
-        "Grape"
+        "Skunk",
+        "Pepper",
+        "Citrus"
       ],
       "effects": {
         "positive": [
-          "Relaxed",
           "Euphoric",
           "Happy",
-          "Energetic",
-          "Giggly"
+          "Creative",
+          "Uplifted",
+          "Focused"
         ],
-        "negative": [],
+        "negative": [
+          "Dry Mouth",
+          "Dry Eyes"
+        ],
         "medical": [
-          "Pain",
-          "Lack Of Appetite",
-          "Inflammation",
-          "Seizures",
-          "Muscle Spasms"
+          "Depression",
+          "Stress",
+          "Cramps",
+          "Fatigue",
+          "Eye Pressure"
         ]
       },
-      "name": "Bedford Glue",
+      "name": "Agent Tangie",
       "userId": 1
     }
   ],
@@ -314,6 +322,35 @@
       },
       "name": "Critical Bilbo",
       "userId": 3
+    },
+    {
+      "id": 17,
+      "race": "hybrid",
+      "flavors": [
+        "Berry",
+        "Blueberry",
+        "Citrus"
+      ],
+      "effects": {
+        "positive": [
+          "Hungry",
+          "Euphoric",
+          "Creative",
+          "Aroused"
+        ],
+        "negative": [
+          "Dry Mouth"
+        ],
+        "medical": [
+          "Depression",
+          "Cramps",
+          "Fatigue",
+          "Headaches",
+          "Eye Pressure"
+        ]
+      },
+      "name": "Alien Apparition",
+      "userId": 1
     }
   ]
 }
