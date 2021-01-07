@@ -76,6 +76,11 @@ json-server -p 8088 -w database.json
 
 8. Enjoy!
 
+![alt text](https://github.com/TheTechTravis/strain-brain/blob/main/public/Login.png?raw=true)
+![alt text](https://github.com/TheTechTravis/strain-brain/blob/main/public/Home%20(New%20Account).png?raw=true)
+![alt text](https://github.com/TheTechTravis/strain-brain/blob/main/public/Set%20Medical%20Conditions.png?raw=true)
+![alt text](https://github.com/TheTechTravis/strain-brain/blob/main/public/Home%20(After%20Setting%20Medical%20Conditions).png?raw=true)
+
 
 ## Built With
 
