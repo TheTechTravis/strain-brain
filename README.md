@@ -31,7 +31,7 @@ npm install -g json-server
 
 6. Get an API key for [The Strain API](http://strains.evanbusse.com//). Do NOT share this API key with anyone else.
 
-7. Clone my [repository](https://github.com/TheTechTravis/strain-brain).
+7. Clone my [repository](https://github.com/TheTechTravis/strain-brain) to your local machine.
 8. Navigate to the project folder. In the ```src``` directory, you will see a file named ```.Settings.js``` (note the dot at the beginning).
 9. Copy that file with ```cp .Settings.js Settings.js```. The ```Settings.js``` file is already in the ```.gitignore file```, so it won't ever be tracked by git. This will prevent you from accidentally sharing your API key with other people.
 10. Copy the API key that you registered into it's appropriate place in the ```Settings.js``` file.
